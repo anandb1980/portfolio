@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anand Basu — CloudSec & CloudML Portfolio</title>
+  <meta name="description" content="AWS Cloud Security & CloudML engineer. Crisis-tested infra transformation, SIEM delivery, and compliance at scale. Prevented ₹50L+ downtime, 40–60% regression drop after redesign." />
+  <meta name="keywords" content="Cloud Security, CloudSec, Cloud ML, CloudML, AWS Security, AWS DevOps, SIEM, Wazuh, TheHive, QuickSight, ISO 27001, CIS, OWASP, Bangalore, EU Remote"/>
+  <meta name="author" content="Anand"/>
+
+  <!-- Canonical & OG/Twitter cards -->
+  <link rel="canonical" href="https://anandscorner.me.in/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="CloudSec & CloudML"/>
+  <meta property="og:title" content="AWS Cloud Security & CloudML — Crisis-tested Delivery"/>
+  <meta property="og:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40–60% regression drop post redesign. Open to EU remote roles."/>
+  <meta property="og:url" content="https://anandscorner.me.in/"/>
+  <meta property="og:image" content="https://anandscorner.me.in/og-card.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="AWS Cloud Security & CloudML — Crisis-tested Delivery"/>
+  <meta name="twitter:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40–60% regression drop post redesign."/>
+  <meta name="twitter:image" content="https://anandscorner.me.in/og-card.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="me" href="https://www.linkedin.com/in/anand80b/"/>
+
+  <style>
+    :root {
+      --bg: #f5ecd9;   /* Kindle paper-like */
+      --muted: #f9f3e6;
+      --card: #fffaf2;
+      --card2: #e3fdff;      
+      --text: #2b2b2b;
+      --subtext: #5e5a50;
+      --subtext2: #7f7a6d;
+      --border: #e8dcc7;
+      --chip: #fffaf2;
+      --chip2: #eedec4;
+      --chip3: #e0dec5;      
+      --shadow: 0 8px 18px color-mix(in oklab, #000 10%, transparent);
+      --radius: 16px;
+      --accent: #2c7be5;
+      --accent-2: #00bce3;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(8px);
+      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent); }
+    .cta { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--chip2); }
+    .nav a.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; border: 0; box-shadow: var(--shadow); }
+
+    /* Hero */
+    .hero { display: grid; gap: 24px; grid-template-columns: 1.2fr .8fr; align-items: center; padding: 56px 0 28px; }
+    .hero h1 { font-size: clamp(28px, 4.2vw, 56px); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; }
+    .hero p { color: var(--subtext); font-size: clamp(16px, 2.2vw, 18px);  margin: 0 0 22px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 28px; }
+    .chip { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--chip); font-size: 14px; }
+    .chip3 { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--chip3); font-weight: 600; font-size: 14px; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+    .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .kpi { background: var(--muted); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+    .kpi .n { font-size: 24px; font-weight: 700; }
+    .kpi .t { color: var(--subtext); font-size: 14px; }
+
+    /* Sections */
+    section { padding: 36px 0; }
+    .section-title { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 18px; text-transform: uppercase; letter-spacing: .18em; color: var(--subtext2); margin-bottom: 16px; }
+    .section-title .line { flex: 1; height: 2px; background: var(--border); }
+
+    /* Cards */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; transition: transform .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .card h3 { margin: 6px 0 8px; font-size: 18px; }
+    .card p { color: var(--subtext); margin: 0 0 10px; font-size: 14px; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    /* Timeline */
+    .timeline { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 18px; }
+    .tl-item { position: relative; margin: 16px 0; }
+    .tl-item::before { content: ""; position: absolute; left: -11px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+    .tl-item h4 { margin: 0 0 4px; font-size: 15px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+    .tl-item p { margin: 0; color: var(--subtext); font-size: 15px; }
+
+    /* Footer */
+    footer { padding: 28px 0 48px; color: var(--subtext); }
+    .foot { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .nav .hide-sm { display: none; }
+    }
+  </style>
+
+  <!-- JSON-LD: Person + Credentials -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anand Basu",
+    "jobTitle": "Cloud Security & CloudML Engineer",
+    "description": "AWS + DevOps + Cybersecurity + ML specialist with crisis-tested infra transformation and SIEM delivery.",
+    "address": {"@type": "PostalAddress", "addressLocality": "Bangalore", "addressCountry": "IN"},
+    "skills": ["AWS","DevOps","Linux","Security","Golang","Python","Bash","PowerShell","ISO 27001","CIS","OWASP","Wazuh","TheHive","QuickSight","SIEM","DFIR"],
+    "url": "https://anandscorner.me.in/",
+    "sameAs": ["https://www.linkedin.com/in/anand80b/"],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential","credentialCategory": "Certification","name": "AWS Certified Security – Specialty","identifier": "AWS-SCS (planned Aug 2025)"},
+      {"@type": "EducationalOccupationalCredential","credentialCategory": "Certification","name": "AWS Certified Machine Learning – Specialty","identifier": "AWS-MLS (planned Oct 2025)"},
+      {"@type": "EducationalOccupationalCredential","credentialCategory": "Course","name": "Machine Learning Specialization (deeplearning.ai)","identifier": "Coursera (planned Nov 2025)"},
+      {"@type": "EducationalOccupationalCredential","credentialCategory": "Course","name": "CCSP Specialization","identifier": "Coursera (completed)"},
+      {"@type": "EducationalOccupationalCredential","credentialCategory": "Course","name": "Data Security & Information Privacy","identifier": "Macquarie (completed)"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header role="banner">
+    <div class="container nav" aria-label="Main navigation">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Anand Basu</span></div>
+      <nav class="hide-sm" role="navigation" aria-label="Primary">
+        <a class="cta" href="#projects">Projects</a>
+        <a class="cta" href="#skills">Skills</a>
+        <a class="cta" href="#certs">Certs</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+      <div class="cta-row">
+        <a class="cta" href="#contact">Email</a>
+        <a class="cta" href="#contact">Work With Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="content">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <h1>AWS Cloud Security and ML Engineer</h1>
+        <p>18+ years building and securing infrastructure. Crisis-tested. I turn chaotic estates into predictable, compliant, observable systems — and I measure the impact.</p>
+        <div class="badges" id="skills">
+          <span class="chip3">AWS Cloud Security</span>
+          <span class="chip3">AWS Cloud ML</span>
+          <span class="chip3">AWS DevOps</span>
+          <span class="chip3">Golang</span>
+          <span class="chip3">Python</span>
+        </div>
+        <div class="cta-row">
+          <a class="cta" href="#projects">See Projects</a>
+          <a class="cta" href="#certs">Certification Timeline</a>
+          <a class="cta" href="#contact">Let’s Talk</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Key results">
+        <div class="kpi-grid">
+          <div class="kpi"><div class="n">₹50L+</div><div class="t">downtime losses prevented via incident response</div></div>
+          <div class="kpi"><div class="n">40–60%</div><div class="t">regression reduction after infra redesign</div></div>
+          <div class="kpi"><div class="n">10+ yrs</div><div class="t">at Neviton leading AWS & Security</div></div>
+          <div class="kpi"><div class="n">18+ yrs</div><div class="t">in IT across AWS, Linux, Windows</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title"><span>Featured Projects & Impact</span><span class="line"></span></div>
+      <div class="cards">
+        <article class="card">
+          <h3>P1: EdTech Infra Turnaround</h3>
+          <p>Inherited a "dumpster fire" estate. Implemented RBAC, patched systems, mirrored test/stage/prod, and built ELK observability. Enabled cyber-insurance audit pass.</p>
+          <div class="meta">
+            <span class="chip" title="Role-Based Access Control">RBAC</span>
+            <span class="chip">CIS</span>
+            <span class="chip">ELK</span>
+            <span class="chip">Windows & Linux</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Security Incident Response</h3>
+          <p>Neutralized multiple crypto-mining compromises (WCM & P1). Root-caused, cleaned, killed interdependent processes, and hardened systems without downtime spillover.</p>
+          <div class="meta">
+            <span class="chip">Incident Management</span>
+            <span class="chip">Threat Hunting</span>
+            <span class="chip">Automation</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>SIEM Platform (Wazuh + TheHive)</h3>
+          <p>Designed and deployed SIEM on AWS EC2 with TheHive, integrated with QuickSight for estate analytics; ML classifier planned for correlation and YARA generation.</p>
+          <div class="meta">
+            <span class="chip">Wazuh</span>
+            <span class="chip">TheHive</span>
+            <span class="chip">QuickSight</span>
+            <span class="chip">AWS</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Sector trust chips -->
+      <div class="badges" style="margin-top:14px" aria-label="Sectors served">
+        <span class="chip" title="Education">🎓 Education</span>
+        <span class="chip" title="Media & Entertainment">🎬 Media</span>
+        <span class="chip" title="Manufacturing">🏭 Manufacturing</span>
+      </div>
+    </section>
+
+    <!-- CERTS TIMELINE -->
+    <section id="certs">
+      <div class="section-title"><span>Certification Timeline</span><span class="line"></span></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <h4>Aug 2025 | AWS Security Specialty (flagship)</h4>
+          <p>Covers securing AWS environments at scale — IAM, incident response, data encryption, monitoring, and compliance mapping. <br />Strengthens my CloudSec profile for regulated and high-security projects.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Oct 2025 | AWS ML Specialty</h4>
+          <p>Focuses on building, training, tuning, and deploying ML models on AWS, integrating services like SageMaker with secure pipelines. Bridges my CloudSec work with CloudML for predictive cyber analytics.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Nov 2025 | Machine Learning Specialization (deeplearning.ai)</h4>
+          <p>Classic ML foundations — supervised, unsupervised, and deep learning — with emphasis on model evaluation and deployment. Gives me the applied ML depth to complement AWS-native ML tooling.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Completed | CCSP Specialization (Coursera)</h4>
+          <p>Covers cloud architecture security, risk management, compliance frameworks, and governance best practices. Serves as the conceptual backbone for my CloudSec implementation skills.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Completed — Data Security & Information Privacy (Macquarie)</h4>
+          <p>Explores data protection principles, privacy regulations, and security controls for sensitive information. Aligns directly with my aim to automate privacy-driven security workflows.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title"><span>About</span><span class="line"></span></div>
+      <div class="cards" style="grid-template-columns: 2fr 1fr;">
+        <article class="card">
+          <h3>What I Do</h3>
+          <p>I design secure, observable, and compliant infrastructure on AWS, then prove the impact with measurable outcomes (fewer regressions, faster recovery, lower risk). I keep it practical: CIS/OWASP for guardrails, ISO 27001 at the estate level, and SIEM to close the loop.</p>
+        </article>
+        <article class="card">
+          <h3>Now</h3>
+          <p>Bangalore (India) → targeting EU remote roles (€50–80K). Building an ML-enhanced security analytics layer over Wazuh/TheHive + QuickSight.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT / CONVERSION -->
+    <section id="contact">
+      <div class="section-title"><span>Contact</span><span class="line"></span></div>
+      <div class="cards" style="grid-template-columns: 1.6fr 1.4fr;">
+        <article class="card">
+          <h3>Let’s talk</h3>
+          <p class="sub">Open to EU remote roles and consulting conversations.</p>
+          <div class="meta" style="margin-top:10px">
+            <a class="cta primary" href="mailto:youremail@example.com" aria-label="Email Anand">Email Me</a>
+            <a class="cta" href="https://www.linkedin.com/in/anand80b/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="cta" href="/resume/anand-basu-cloudsec-cloudml-resume.pdf" download>Download Résumé (PDF)</a>
+            <a class="cta" href="/resume/anand-basu-impact-sheet.pdf" download>Quick Impact Sheet (1‑pager)</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Signal in one glance</h3>
+          <ul style="margin:0; padding-left:18px; color: var(--subtext); font-size:14px;">
+            <li>Infra turnaround: 40–60% regression drop</li>
+            <li>₹50L+ downtime losses prevented</li>
+            <li>SIEM delivery with ML roadmap</li>
+            <li>AWS + Security + Compliance blend</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="y"></span> Anand Basu</div>
+      <div>Built with vanilla HTML/CSS • No trackers • <a href="#home">Back to top</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
