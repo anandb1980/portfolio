@@ -27,23 +27,38 @@
   <link rel="me" href="https://www.linkedin.com/in/anand80b/"/>
 
   <style>
-    :root {
-      --bg: #f5ecd9;   /* Kindle paper-like */
-      --muted: #f9f3e6;
-      --card: #fffaf2;
-      --card2: #e3fdff;      
-      --text: #2b2b2b;
-      --subtext: #5e5a50;
-      --subtext2: #7f7a6d;
-      --border: #e8dcc7;
-      --chip: #fffaf2;
-      --chip2: #eedec4;
-      --chip3: #e7bd7a;      
-      --shadow: 0 8px 18px color-mix(in oklab, #000 10%, transparent);
-      --radius: 16px;
-      --accent: #2c7be5;
-      --accent-2: #00bce3;
-    }
+ :root {
+  /* Base */
+  --bg:       #f9f9f7;  /* clean, modern off-white */
+  --text:     #262626;  /* crisp dark grey */
+  --subtext:  #55524a;  /* calm neutral */
+  --subtext2: #767066;  /* captions/help text */
+
+  /* Surfaces */
+  --muted:    #f4f2ec;  /* subtle section background */
+  --card:     #ffffff;  /* pure white for clarity */
+  --card2:    #f0f5f7;  /* light blue-grey, very soft */
+
+  /* Lines & elevation */
+  --border:   #e0ddd5;  /* refined border */
+  --shadow:   0 6px 16px rgba(0,0,0,.05);
+  --radius:   14px;     /* slightly rounded, professional */
+
+  /* Accents (accessible, desaturated) */
+  --accent:   #2c7be5;  /* primary blue */
+  --accent-2: #0a9aad;  /* muted teal */
+  --accent-3: #b68a4a;  /* warm brass for subtle highlights */
+
+  /* Chips/tags (quiet, readable) */
+  --chip:     #ffffff;  /* matches card */
+  --chip2:    #f0ebe3;  /* warm sand */
+  --chip3:    #d2b17b;  /* muted brass */
+
+  /* States (accessible colors) */
+  --ok:       #1f7a4d;  /* success green */
+  --warn:     #8a6d3b;  /* warning brown */
+  --danger:   #b23b3b;  /* error red */
+}
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -66,7 +81,7 @@
     .nav { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px 0; }
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; }
     .dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent); }
-    .cta { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--chip2); }
+    .cta { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--accent-2); font-weight:700; color: #f6f4ef; }
     .cta2 { font-size: 13px; font-weight: 700; color: var(--subtext2); }
     .nav a.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; border: 0; box-shadow: var(--shadow); }
 
@@ -313,4 +328,8 @@
   </footer>
 
   <script>
-    doc
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
