@@ -46,7 +46,7 @@
 
   /* Accents (accessible, desaturated) */
   --accent:   #2c7be5;  /* primary blue */
-  --accent-2: #0a9aad;  /* muted teal */
+  --accent-2: #e0cfb5;  /* muted teal */
   --accent-3: #b68a4a;  /* warm brass for subtle highlights */
 
   /* Chips/tags (quiet, readable) */
@@ -81,8 +81,9 @@
     .nav { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px 0; }
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; }
     .dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent); }
-    .cta { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--accent-2); font-weight:700; color: #f6f4ef; }
-    .cta2 { font-size: 13px; font-weight: 700; color: var(--subtext2); }
+    .cta { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--accent-2); font-weight:700; color: #6b6862; }
+    .cta2 { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--accent); font-weight:700; color: #f6f4ef; }
+    .cta3 { font-size: 15px; font-weight: 700; color: var(--accent); }
     .nav a.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; border: 0; box-shadow: var(--shadow); }
 
     /* Hero */
@@ -168,8 +169,8 @@
         <a class="cta" href="#contact">Contact</a>
       </nav>
       <div class="cta-row">
-        <a class="cta" href="#contact">Email</a>
-        <a class="cta" href="#contact">Work With Me</a>
+        <a class="cta2" href="#contact">Email</a>
+        <a class="cta2" href="#contact">Work With Me</a>
       </div>
     </div>
   </header>
@@ -190,7 +191,7 @@
         <div class="cta-row">
           <a class="cta" href="#projects">See Projects</a>
           <a class="cta" href="#certs">Certification Timeline</a>
-          <a class="cta" href="#contact">Let’s Talk</a>
+          <a class="cta2" href="#contact">Let’s Talk</a>
         </div>
       </div>
       <div class="hero-card" aria-label="Key results">
@@ -208,7 +209,7 @@
       <div class="section-title"><span>Featured Projects & Impact</span><span class="line"></span></div>
       <div class="cards">
         <article class="card">
-          <h3>P1: EdTech Infra Turnaround</h3>
+          <h3>EdTech Infra Turnaround</h3>
           <p>Inherited a "dumpster fire" estate. Implemented RBAC, patched systems, mirrored test/stage/prod, and built ELK observability. Enabled cyber-insurance audit pass.</p>
           <div class="meta">
             <span class="chip" title="Role-Based Access Control">RBAC</span>
@@ -219,7 +220,7 @@
         </article>
         <article class="card">
           <h3>Security Incident Response</h3>
-          <p>Neutralized multiple crypto-mining compromises (WCM & P1). Root-caused, cleaned, killed interdependent processes, and hardened systems without downtime spillover.</p>
+          <p>Neutralized multiple crypto-mining compromises. Root-caused, cleaned, killed interdependent processes, and hardened systems without downtime spillover.</p>
           <div class="meta">
             <span class="chip">Incident Management</span>
             <span class="chip">Threat Hunting</span>
@@ -267,13 +268,13 @@
           <h4>Aug 2025 | CCSP Specialization (Infosec Institute on Coursera)</h4>
           <p>Covers cloud architecture security, risk management, compliance frameworks, and governance best practices. <br />Serves as the conceptual backbone for my CloudSec implementation skills.</p>
           <p>Complements AWS Security Specialty with deep architectural security principles, risk governance, and compliance mapping that apply across AWS projects.</p>
-          <a class="cta2" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank" rel="noopener">Verify</a>
+          <a class="cta3" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank" rel="noopener">Verify</a>
         </div>
         <div class="tl-item">
           <h4>Aug 2025 | Data Security & Information Privacy (Macquarie University on Coursera)</h4>
           <p>Explores data protection principles, privacy regulations, and security controls for sensitive information. <br />Aligns directly with my aim to automate privacy-driven security workflows.</p>
           <p>Extends AWS Security Specialty into the privacy domain, ensuring secure handling of regulated and sensitive data in AWS environments.</p>
-          <a class="cta2" href="https://coursera.org/verify/0M2OR15F6990" target="_blank" rel="noopener">Verify</a>
+          <a class="cta3" href="https://coursera.org/verify/0M2OR15F6990" target="_blank" rel="noopener">Verify</a>
         </div>
       </div>
     </section>
