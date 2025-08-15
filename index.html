@@ -27,41 +27,40 @@
   <link rel="me" href="https://www.linkedin.com/in/anand80b/"/>
 
   <style>
- :root {
+:root {
   /* Base */
-  --bg:       #f9f9f7;  /* clean, modern off-white */
-  --text:     #262626;  /* crisp dark grey */
-  --subtext:  #55524a;  /* calm neutral */
-  --subtext2: #dd9676;  /* captions/help text */
+  --bg:       #f8f9fa;   /* light neutral */
+  --text:     #1a1d23;
+  --subtext:  #4b5563;
+  --subtext2: #6b7280;   /* slate-500 */
 
   /* Surfaces */
-  --muted:    #f4f2ec;  /* subtle section background */
-  --card:     #ffffff;  /* pure white for clarity */
-  --card2:    #f0f5f7;  /* light blue-grey, very soft */
+  --muted:    #f3f4f6;   /* very light gray */
+  --card:     #ffffff;
+  --card2:    #f9fafb;
 
   /* Lines & elevation */
-  --border:   #ddd7ce;  /* refined border */
-  --border2:  #48b6e9;  /* refined border */
-  --border3:  #53a11f;  /* refined border */
-  --shadow:   0 6px 16px rgba(0,0,0,.05);
-  --radius:   14px;     /* slightly rounded, professional */
+  --border:   #e5e7eb;
+  --shadow:   0 6px 18px rgba(0,0,0,.06);
+  --radius:   14px;
 
-  /* Accents (accessible, desaturated) */
-  --accent:   #2c7be5;  /* primary blue */
-  --accent-2: #e0cfb5;  /* muted teal */
-  --accent-3: #d0ebbf;  /* warm brass for subtle highlights */
+  /* Accents */
+  --accent:     #1d4ed8;
+  --accent-2:   #1b7e12;
+  --accent-3:   #26cfe6;
+  --border:     #e5e7eb;
 
-  /* Chips/tags (quiet, readable) */
-  --chip:     #ffffff;  /* matches card */
-  --chip2:    #ece6dd;  /* warm sand */
-  --chip3:    #d2b17b;  /* muted brass */
+  /* NEW for buttons */
+  --btn-primary-border: var(--accent);
+  --btn-secondary-border: var(--accent-2);
 
-  /* States (accessible colors) */
-  --ok:       #1f7a4d;  /* success green */
-  --warn:     #8a6d3b;  /* warning brown */
-  --danger:   #b23b3b;  /* error red */
+  /* States */
+  --ok:       #1f7a4d;
+  --warn:     #8a6d3b;
+  --danger:   #b91c1c;
 }
-    * { box-sizing: border-box; }
+
+* { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
       margin: 0;
@@ -82,12 +81,8 @@
     }
     .nav { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px 0; }
     .brand { padding: 5px 24px; display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; font-size: 18px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
-    .cta { padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border2); background: var(--chip); font-size: 15px; font-weight: 700; color: var(--accent); }
-    .cta2 { padding: 10px 14px; border-radius: 999px; border: 2px solid var(--border3); background: var(--accent-3); font-size: 15px; font-weight: 700; color: var(--text);  }
-    .cta3 { font-size: 15px; font-weight: 700; color: var(--accent); }
-    .nav a.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; border: 0; box-shadow: var(--shadow); }
-    .cta:hover { border-color: var(--brand-blue) !important; background-color: #e6f2ff !important;  /* very light blue */ }
-    .cta2:hover { border-color: var(--brand-green) !important; background-color: #e6ffe6 !important;  /* very light green */ }
+    .cta4 { font-size: 15px; font-weight: 700; color: var(--accent-3); }
+    .nav a.primary { color: var(--cta3); border: 0; box-shadow: var(--shadow); }
 
     /* Hero */
     .hero { display: grid; gap: 24px; grid-template-columns: 1.2fr .8fr; align-items: center; padding: 56px 0 28px; }
@@ -95,7 +90,7 @@
     .hero p { color: var(--subtext); font-size: clamp(16px, 2.2vw, 18px);  margin: 0 0 22px; }
     .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 28px; }
     .chip { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--chip); font-weight: 600; font-size: 14px; }
-    .chip3 { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--chip2); background: var(--chip); font-weight: 600; font-size: 14px; }
+    .chip4 { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--chip2); background: var(--chip); font-weight: 600; font-size: 14px; }
     .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .hero-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
     .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -153,16 +148,12 @@
 }
 
 /* 1) Borders: standardize to brand-blue (buttons) and neutral (content) */
-.cta, .cta2 {
+.cta, .cta2, .cta3 {
   border-color: var(--brand-blue) !important;
 }
 .card, .hero-card, .kpi, header, footer {
   border-color: var(--border-neutral) !important; /* calm, consistent */
 }
-
-/* Keep your requested hover fills (very light), but borders stay on-brand */
-.cta:hover { border-color: var(--brand-blue) !important; background-color: #e6f2ff !important; }
-.cta2:hover { border-color: #53a11f !important; background-color: #e6ffe6 !important; }
 
 /* 2) Card padding rhythm (8-pt scale) */
 .card,
@@ -198,6 +189,12 @@
   margin: 16px 0 !important; 
   padding-top: 12px !important;
 }
+
+#pocs { 
+  margin: 0px 0 !important; 
+  padding-top: 0px !important;
+}
+
 
 /* 7) Typography margins: tighten headings inside cards for consistency */
 .card h3 { margin: 4px 0 8px !important; }
@@ -294,7 +291,65 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
 #certs h4 { display: inline; margin: 0; }
 #certs h4 + p { margin-top: 8px !important; } /* ensure description spaced */
 
-  </style>
+/* Primary CTA (solid blue) */
+.cta {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+.cta:hover {
+  background: #153e9c; /* darker blue */
+  border-color: #153e9c;
+}
+
+/* Secondary CTA (outlined brass) */
+.cta2 {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent-2);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+.cta2:hover {
+  background: #0f4b0a;; /* subtle brass wash */
+  color: #fff;       /* darker brass */
+}
+
+.cta3{
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #fafafa;
+  color: var(--accent-3);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+.cta3:hover {
+  background: #ededed; /* darker blue */
+}
+
+.cta5{
+  padding: 3px 18px;
+  border-radius: 999px;
+  border: 1px solid #bfc0c4;
+  background: transparent;
+  color: var(--subtext2);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+
+
+</style>
 
   <!-- JSON-LD: Person + Credentials -->
   <script type="application/ld+json">
@@ -342,16 +397,16 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
         <p>18+ years building and securing infrastructure. Crisis-tested. I turn chaotic estates into predictable, compliant, observable systems — and I measure the impact.</p>
         <p><i>This Website is Work in Progress. Next update on 24th August, 2025.</i></p>
         <div class="badges" id="skills">
-          <span class="chip3">AWS Cloud Security</span>
-          <span class="chip3">AWS Cloud ML</span>
-          <span class="chip3">AWS DevOps</span>
-          <span class="chip3">Golang</span>
-          <span class="chip3">Python</span>
+          <span class="cta5">AWS Cloud Security</span>
+          <span class="cta5">AWS Cloud ML</span>
+          <span class="cta5">AWS DevOps</span>
+          <span class="cta5">Golang</span>
+          <span class="cta5">Python</span>
         </div>
         <div class="cta-row">
           <a class="cta" href="#projects">Projects</a>
           <a class="cta" href="#certs">Certification Timeline</a>
-          <a class="cta" href="#certs">Proof Of Concepts</a>
+          <a class="cta" href="#pocs">Proof Of Concepts</a>
           <a class="cta2" href="#contact">Let’s Talk</a>
         </div>
       </div>
@@ -371,40 +426,40 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
       <div class="cards">
         <article class="card">
           <h3>EdTech Infra Turnaround</h3>
-          <p>Inherited a "dumpster fire" estate. Implemented RBAC, patched systems, mirrored test/stage/prod, and built ELK observability. Enabled cyber-insurance audit pass.</p>
+          <p>Inherited severely mismanaged infra; stabilized and rebuilt to compliance-ready state. Built ELK observability. Enabled cyber-insurance audit pass.</p>
           <div class="meta">
-            <span class="chip3" title="Role-Based Access Control">RBAC</span>
-            <span class="chip3">CIS</span>
-            <span class="chip3">ELK</span>
-            <span class="chip3">Windows & Linux</span>
+            <span class="cta5" title="Role-Based Access Control">RBAC</span>
+            <span class="cta5">CIS</span>
+            <span class="cta5">ELK</span>
+            <span class="cta5">Windows & Linux</span>
           </div>
         </article>
         <article class="card">
           <h3>Security Incident Response</h3>
           <p>Neutralized multiple crypto-mining compromises. Root-caused, cleaned, killed interdependent processes, and hardened systems without downtime spillover.</p>
           <div class="meta">
-            <span class="chip3">Incident Management</span>
-            <span class="chip3">Threat Hunting</span>
-            <span class="chip3">Automation</span>
+            <span class="cta5">Incident Management</span>
+            <span class="cta5">Threat Hunting</span>
+            <span class="cta5">Automation</span>
           </div>
         </article>
         <article class="card">
           <h3>SIEM Platform (Wazuh + TheHive)</h3>
           <p>Designed and deployed SIEM on AWS EC2 with TheHive, integrated with QuickSight for estate analytics; ML classifier planned for correlation and YARA generation.</p>
           <div class="meta">
-            <span class="chip3">Wazuh</span>
-            <span class="chip3">TheHive</span>
-            <span class="chip3">QuickSight</span>
-            <span class="chip3">AWS</span>
+            <span class="cta5">Wazuh</span>
+            <span class="cta5">TheHive</span>
+            <span class="cta5">QuickSight</span>
+            <span class="cta5">AWS</span>
           </div>
         </article>
       </div>
 
       <!-- Sector trust chips -->
       <div class="badges" style="margin-top:14px" aria-label="Sectors served">
-        <span class="chip3" title="Education">Education</span>
-        <span class="chip3" title="Media & Entertainment">Media</span>
-        <span class="chip3" title="Manufacturing">Manufacturing</span>
+        <span class="cta5" title="Education">Education</span>
+        <span class="cta5" title="Media & Entertainment">Media</span>
+        <span class="cta5" title="Manufacturing">Manufacturing</span>
       </div>
     </section>
 
@@ -422,7 +477,7 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
           </div>
             <p>Specialization in AI for Cybersecurity (Coursera) — focused on anomaly detection, malware analysis, and adversarial ML, with hands-on projects in fraud prevention and GAN-resistant security models.<br /></p>
             <p>Complements my AWS Security + ML expertise with a focus on Cybersecurity, strengthening my knowledge of ML pipeline design and aligning directly with my CloudSec + CloudML PoC stack.</p>
-            <p>Builds on Aurelion Géron’s <a class="cta3" href="https://www.amazon.in/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/9355421982/ref=sr_1_1?crid=2GO2CEMHH17Y2&dib=eyJ2IjoiMSJ9.lt5rf-bTj6nMywsDrEdE07rvjrIFg_Km-x42iwZqtIGe0DCxpPXoJYUc24jx53DUwpxj241ROPMD0dmPFQU33MyYfCOcKB1dAbMNx0AaTAcHmfac_3NxvqoybcGL_83HUMomd-gajUJJhokUTEaAn_l2eT2J-rKOIoDbO0qNChiMio1O9xIUyHQV96hpptbLB5644oIXhSlt0g0LPSQyTqKccijrR5UBsh6dELVzz-Y.sW1v1BazWNRWppa8_J2llJN0LKww6hOJtQJdMmcrN0w&dib_tag=se&keywords=hands-on+machine+learning+with+scikit-learn%2C+keras%2C+and+tensorflow&nsdOptOutParam=true&qid=1755249752&sprefix=hands-on%2Caps%2C323&sr=8-1" target="_blank" rel="noopener">Hands-On Machine Learning with Scikit-Learn, Keras and Tensorflow (Third Edition)</a> book.</p>
+            <p>Builds on Aurelion Géron’s <a class="cta4" href="https://www.amazon.in/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/9355421982/ref=sr_1_1?crid=2GO2CEMHH17Y2&dib=eyJ2IjoiMSJ9.lt5rf-bTj6nMywsDrEdE07rvjrIFg_Km-x42iwZqtIGe0DCxpPXoJYUc24jx53DUwpxj241ROPMD0dmPFQU33MyYfCOcKB1dAbMNx0AaTAcHmfac_3NxvqoybcGL_83HUMomd-gajUJJhokUTEaAn_l2eT2J-rKOIoDbO0qNChiMio1O9xIUyHQV96hpptbLB5644oIXhSlt0g0LPSQyTqKccijrR5UBsh6dELVzz-Y.sW1v1BazWNRWppa8_J2llJN0LKww6hOJtQJdMmcrN0w&dib_tag=se&keywords=hands-on+machine+learning+with+scikit-learn%2C+keras%2C+and+tensorflow&nsdOptOutParam=true&qid=1755249752&sprefix=hands-on%2Caps%2C323&sr=8-1" target="_blank" rel="noopener">Hands-On Machine Learning with Scikit-Learn, Keras and Tensorflow (Third Edition)</a> book.</p>
         </div>
         <div class="tl-item">
           <div class="section-title"><span class="line2"></span></div>
@@ -474,6 +529,17 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
         </div>
       </div>
     </section>
+
+    <!-- Proof Of Concepts TIMELINE -->
+    <section id="pocs"><section id="certs">
+      <div class="section-title"><span>Currently Building</span><span class="line"></span></div>
+        <div class="tl-content">
+          <h4>Personally Identifiable Information Anonymizer.</h4>
+          <!--<a class="cta3" href="https://www.coursera.org/specializations/ai-for-cybersecurity?action=enroll" target="_blank" rel="noopener">View.</a>-->
+        </div>
+        <p>Desiging a secure cloud pipeline with ML-driven PII detection and automated anonymization, integrating scikit-learn classifiers with rule-based masking for sensitive data.</p>
+        <p>End-to-end PII system ensuring GDPR/CCPA alignment, encryption, and re-identification.</p>
+    </section></section>
 
     <!-- ABOUT -->
     <section id="about">
