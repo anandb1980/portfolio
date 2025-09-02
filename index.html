@@ -13,12 +13,12 @@
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="CloudSec & CloudML"/>
   <meta property="og:title" content="AWS Cloud Security & CloudML — Crisis-tested Delivery"/>
-  <meta property="og:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40–60% regression drop post redesign. Open to EU remote roles."/>
+  <meta property="og:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40 - 60% regression drop post redesign. Open to EU remote roles."/>
   <meta property="og:url" content="https://anandscorner.me.in/"/>
   <meta property="og:image" content="https://anandscorner.me.in/og-card.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="AWS Cloud Security & CloudML — Crisis-tested Delivery"/>
-  <meta name="twitter:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40–60% regression drop post redesign."/>
+  <meta name="twitter:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40 - 60% regression drop post redesign."/>
   <meta name="twitter:image" content="https://anandscorner.me.in/og-card.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,13 +29,13 @@
   <style>
 :root {
   /* Base */
-  --bg:       #f8f9fa;   /* light neutral */
+  --bg:       #fefcf5;   /* light neutral */
   --text:     #1a1d23;
   --subtext:  #4b5563;
   --subtext2: #6b7280;   /* slate-500 */
 
   /* Surfaces */
-  --muted:    #f3f4f6;   /* very light gray */
+  --muted:    #fdf6e3;   /* very light gray */
   --card:     #ffffff;
   --card2:    #f9fafb;
 
@@ -45,10 +45,10 @@
   --radius:   14px;
 
   /* Accents */
-  --accent:     #1d4ed8;
-  --accent-2:   #1b7e12;
-  --accent-3:   #26cfe6;
-  --border:     #e5e7eb;
+  --accent:   #1d4ed8;
+  --accent-2: #1b7e12;
+  --accent-3: #26cfe6;
+  --border:   #e5e7eb;
 
   /* NEW for buttons */
   --btn-primary-border: var(--accent);
@@ -80,7 +80,7 @@
       border-bottom: 1px solid var(--border);
     }
     .nav { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 12px 0; }
-    .brand { padding: 5px 24px; display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; font-size: 18px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+    .brand { padding: 5px 24px; display: flex; align-items: center; gap: 8px; font-weight: 900; letter-spacing: .03em; font-size: 22px; font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif';}
     .cta4 { font-size: 15px; font-weight: 700; color: var(--accent-3); }
     .nav a.primary { color: var(--cta3); border: 0; box-shadow: var(--shadow); }
 
@@ -100,7 +100,7 @@
 
     /* Sections */
     section { padding: 36px 0; }
-    .section-title { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 18px; text-transform: uppercase; letter-spacing: .18em; color: var(--text); margin-bottom: 16px; }
+    .section-title { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 18px; text-transform: uppercase; letter-spacing: .05em; color: var(--text); margin-bottom: 16px; }
     .section-title .line { flex: 1; height: 2px; background: var(--border); }
     .section-title .line2 { flex: 1; height: 2px; background: var(--chip2); }
 
@@ -113,8 +113,14 @@
     .meta { display: flex; gap: 8px; flex-wrap: wrap; }
 
     /* Timeline */
-    .timeline { margin-left: 1px; padding-left: 1px; }
-    .tl-item { position: relative; margin: 16px 0; padding-top: 20px;}
+    .timeline .tl-item {
+      border: 1px solid rgba(31, 42, 55, 0.2) !important;
+      border-radius: 12px !important;
+      padding: 16px !important;
+      background: #fefefe !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+      margin-bottom: 18px !important;
+    }
     .tl-item h4 { margin: 0 0 4px; font-size: 17px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
     .tl-item p { margin: 0; color: var(--subtext); font-size: 16px; }
     .tl-header {
@@ -147,7 +153,6 @@
   --border-neutral: #e5e7eb;
 }
 
-/* 1) Borders: standardize to brand-blue (buttons) and neutral (content) */
 .cta, .cta2, .cta3 {
   border-color: var(--brand-blue) !important;
 }
@@ -195,14 +200,13 @@
   padding-top: 0px !important;
 }
 
-
 /* 7) Typography margins: tighten headings inside cards for consistency */
 .card h3 { margin: 4px 0 8px !important; }
 .tl-item h4 { margin: 0 0 4px !important; }
 
 /* 8) Subtext color: avoid orange captions for a blue brand */
 :root { --subtext2: #6b7280; } /* slate-500 */
-.section-title { color: var(--subtext2) !important; }
+.section-title { color: var(--text) !important; }
 
 /* === CERTIFICATIONS: one full-width card per cert === */
 
@@ -335,14 +339,43 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
   transition: background .2s ease, color .2s ease;
 }
 .cta3:hover {
-  background: #ededed; /* darker blue */
+  background: #ededed; 
 }
+
+.cta3a{
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #385803;
+  color: var(--accent-3);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+.cta3a:hover {
+  background: #ededed; 
+}
+
+.cta3b{
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #1e476d;
+  color: var(--accent-3);
+  font-size: 15px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+.cta3b:hover {
+  background: #ededed; 
+}
+
 
 .cta5{
   padding: 3px 18px;
   border-radius: 999px;
   border: 1px solid #bfc0c4;
-  background: transparent;
+  background: #fdfde1;
   color: var(--subtext2);
   font-size: 15px;
   font-weight: 600;
@@ -377,15 +410,14 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
 <body>
   <header role="banner">
     <div class="container nav" aria-label="Main navigation">
-      <div class="brand"><span>Anand Basu</span></div>
+      <div class="brand"><span>ANAND BASU</span></div>
       <nav class="hide-sm" role="navigation" aria-label="Primary">
         <a class="cta" href="#projects">Projects</a>
         <a class="cta" href="#skills">Skills</a>
         <a class="cta" href="#certs">Certs</a>
-        <a class="cta" href="#contact">Contact</a>
       </nav>
       <div class="cta-row">
-        <a class="cta2" href="#contact">Work With Me</a>
+        <a class="cta2" href="#contact">Contact</a>
       </div>
     </div>
   </header>
@@ -408,16 +440,30 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
           <a class="cta" href="#projects">Projects</a>
           <a class="cta" href="#certs">Certification Timeline</a>
           <a class="cta" href="#pocs">Proof Of Concepts</a>
-          <a class="cta2" href="#contact">Let’s Talk</a>
         </div>
       </div>
       <div class="hero-card" aria-label="Key results">
         <div class="kpi-grid">
           <div class="kpi"><div class="n">₹50L+</div><div class="t">downtime losses prevented via incident response</div></div>
-          <div class="kpi"><div class="n">40–60%</div><div class="t">regression reduction after infra redesign</div></div>
+          <div class="kpi"><div class="n">40 - 60%</div><div class="t">regression reduction after infra redesign</div></div>
           <div class="kpi"><div class="n">10+ yrs</div><div class="t">at Neviton leading AWS & Security</div></div>
           <div class="kpi"><div class="n">18+ yrs</div><div class="t">in IT across AWS, Linux, Windows</div></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title"><span>About</span><span class="line"></span></div>
+      <div class="cards" style="grid-template-columns: 2fr 1fr;">
+        <article class="card">
+          <h3>What I Do</h3>
+          <p>I design secure, observable, and compliant infrastructure on AWS, then prove the impact with measurable outcomes (fewer regressions, faster recovery, lower risk). I keep it practical: CIS/OWASP for guardrails, ISO 27001 at the estate level, and SIEM to close the loop.</p>
+        </article>
+        <article class="card">
+          <h3>Now</h3>
+          <p>Bangalore (India) → targeting EU remote roles. Building an ML-enhanced security analytics layer over Wazuh/TheHive + QuickSight.</p>
+        </article>
       </div>
     </section>
 
@@ -464,54 +510,24 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
       </div>
     </section>
 
+    <!-- CORE CERTIFICATIONS -->
     <section id="certs">
-      <div class="section-title"><span>Core Certification</span><span class="line"></span></div>
+      <div class="section-title"><span>Core Certifications</span><span class="line"></span></div>
 
-      <!-- STRATEGIC STACK SUMMARY -->
       <p style="color:var(--subtext);font-size:15px;margin-bottom:12px;">
-        Each certification below builds toward a unified execution stack — AWS-level hardening → policy governance → privacy-aware ML deployment → AI-enhanced SecOps. Together, they underpin my CloudSec + CloudML implementation roadmap.
+        My certification stack blends SecOps with Compliance and Machine Learning, from AWS level hardening to governance frameworks and EU law.<br />
+        It creates a unified CloudSec + CloudML + Compliance capability for MSSPs and regulated industries.
       </p>
 
       <div class="timeline">
-        <!-- GROUP 1: AWS CLOUDSEC -->
         <div class="section-title"><span class="line"></span><span>AWS Cloud Security</span><span class="line"></span></div>
         <div class="tl-item">
           <div class="tl-header">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/64px-Amazon_Web_Services_Logo.svg.png">
             <h4>AWS Certified Security - Specialty | Sept 2025</h4>
-            <a class="cta3" href="https://aws.amazon.com/certification/certified-security-specialty/" target="_blank">In-Progress</a>
+            <a class="cta3b" href="https://aws.amazon.com/certification/certified-security-specialty/" target="_blank">In-Progress</a>
           </div>
-          <p>Hardened AWS environments with IAM boundaries, SCPs, KMS encryption, and automated threat detection. Core pillar for secure-by-default cloud deployments.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="certs">
-      <div class="section-title"><span>Primary Augments</span><span class="line"></span></div>
-      <p style="color:var(--subtext);font-size:15px;margin-bottom:12px;">
-        These certifications reinforce the core by extending cloud hardening into governance, regulatory alignment, and advanced analytics. Together they support AWS Security Specialty with a compliance-aware, EU-ready security capability skillset.
-      </p>
-
-      <div class="timeline">
-        <div class="section-title"><span class="line"></span><span>Cloud Security, Governance, and Privacy</span><span class="line"></span></div>
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png">
-            <h4>NIST Cybersecurity & Risk Management Specialization - Packt (Coursera) | Sept 2025</h4>
-            <a class="cta3" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank">Verify</a>
-          </div>
-          <p>Built on AWS Security Specialty by extending cloud hardening into governance and risk frameworks. <br />
-             NIST CSF + RMF give me the vocabulary to align incident response and compliance reporting with enterprise audits.</p>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png">
-            <h4>General Data Protection Regulation (GDPR) Specialization - Packt (Coursera) | Sept 2025</h4>
-            <a class="cta3" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank">Verify</a>
-          </div>
-          <p>Complements AWS SecSpec by grounding security controls in EU privacy law. <br />
-             Translates encryption, logging, and retention features into GDPR-aligned technical safeguards for MSSP/MSP clients.</p>
+          <p>Defines the security baseline for all cloud work - access control, encryption, and detection - the foundation every other governance or compliance layer builds on.</p>
         </div>
 
         <div class="tl-item">
@@ -520,41 +536,73 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
             <h4>AWS Certified Machine Learning - Specialty | Nov 2025</h4>
             <a class="cta3" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/" target="_blank">Next</a>
           </div>
-          <p>Trained to deploy encrypted, cost-aware Sagemaker pipelines. Integrates ML lifecycle controls into security-sensitive deployments.</p>
+          <p>Extends security into predictive analytics. Applies lifecycle controls and encrypted pipelines so ML deployments remain secure by default.</p>
         </div>
+
       </div>
     </section>
 
+    <!-- PRIMARY AUGMENT CERTIFICATIONS -->
+    <section id="certs">
+      <div class="section-title"><span>Primary Augments</span><span class="line"></span></div>
+      <p style="color:var(--subtext);font-size:15px;margin-bottom:12px;">
+        These certifications reinforce the core by extending cloud hardening into governance, regulatory alignment, and advanced analytics. <br />
+        Together they support AWS Certified Security Specialty with a compliance-aware, security capability skillset.
+      </p>
+
+      <div class="timeline">
+        <div class="section-title"><span class="line"></span><span>Cloud Security, Governance, and Privacy</span><span class="line"></span></div>
+        <div class="tl-item">
+          <div class="tl-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png">
+            <h4>NIST Cybersecurity & Risk Management Specialization - Packt (Coursera) | Sept 2025</h4>
+            <a class="cta3a" href="https://www.coursera.org/account/accomplishments/specialization/QKQKQ1OS79W3" target="_blank">Completed</a>
+          </div>
+          <p>Governance Certification. Builds on AWS Certified Security Specialty  by extending cloud hardening into governance and risk frameworks. <br />
+             NIST CSF + RMF give me the vocabulary to align incident response and compliance reporting with enterprise audits.</p>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png">
+            <h4>General Data Protection Regulation (GDPR) Specialization - Packt (Coursera) | Sept 2025</h4>
+            <a class="cta3" href="https://www.coursera.org/learn/packt-general-data-protection-regulation-gdpr-xylpv" target="_blank">Next</a>
+          </div>
+          <p>Regulation Certification. Complements AWS Certified Security Specialty by grounding security controls in EU privacy law. <br />
+             Translates encryption, logging, and retention features into GDPR-aligned technical safeguards.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECONDARY AUGMENT CERTIFICATIONS -->
     <section id="certs">
       <div class="section-title"><span>Secondary Augments</span><span class="line"></span></div>
-
-      <!-- STRATEGIC STACK SUMMARY -->
       <p style="color:var(--subtext);font-size:15px;margin-bottom:12px;">
         These programs provide breadth and supporting context, with structured training in cloud security domains, data protection principles, and applied AI for threat analysis. They act as secondary layers that round out the core and primary stack without diluting focus.
       </p>
 
       <div class="timeline">
-        <!-- GROUP 1: CLOUDSEC / GOVERNANCE / PRIVACY -->
         <div class="section-title"><span class="line"></span><span>Cloud Security & Governance</span><span class="line"></span></div>
         <div class="tl-item">
           <div class="tl-header">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png">
             <h4>CCSP Specialization (Coursera) | Aug 2025</h4>
-            <a class="cta3" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank">Verify</a>
+            <a class="cta3a" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank">Completed</a>
           </div>
-          <p>Mapped ISO 27001, OWASP, and NIST frameworks into cloud-native architecture. Guides my policy-as-code and risk governance across projects.</p>
+          <p>Provides structured coverage of core cloud security domains — keyword recognition and breadth beyond the AWS ecosystem.</p>
         </div>
 
         <div class="tl-item">
           <div class="tl-header">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png">
             <h4>Data Security & Information Privacy (Coursera) | Aug 2025</h4>
-            <a class="cta3" href="https://coursera.org/verify/0M2OR15F6990" target="_blank">Verify</a>
+            <a class="cta3a" href="https://coursera.org/verify/0M2OR15F6990" target="_blank">Completed </a>
           </div>
-          <p>Focused on regulated data processing, anonymization, and re-identification logic. Directly fuels my GDPR/DPDP-aligned pipeline designs.</p>
+          <p>Provides the conceptual base for NIST and GDPR certifications. <br />
+            Baseline for privacy principles, anonymization, and data handling practices that make compliance frameworks technically enforceable.</p>
         </div>
 
-        <!-- GROUP 2: CLOUDML / AI-SecOps -->
         <div class="section-title"><span class="line"></span><span>ML Engineering & AI-Driven Cybersecurity</span><span class="line"></span></div>
         <div class="tl-item">
           <div class="tl-header">
@@ -562,13 +610,11 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
             <h4>AI for Cybersecurity (Coursera) | Oct 2025</h4>
             <a class="cta3" href="https://www.coursera.org/specializations/ai-for-cybersecurity?action=enroll" target="_blank">Further</a>
           </div>
-          <p>Applies anomaly detection, GAN-resistant modeling, and RL to cybersecurity workflows. Powers AI-enhanced threat scoring, log analysis, and SOAR decision trees.</p>
+          <p>Explores applied AI in threat defense — anomaly detection, adversarial modeling, and reinforcement learning to enrich SOC workflows.</p>
           <p>Builds on Aurelion Géron’s <a class="cta4" href="https://www.amazon.in/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/9355421982/ref=sr_1_1?crid=2GO2CEMHH17Y2&dib=eyJ2IjoiMSJ9.lt5rf-bTj6nMywsDrEdE07rvjrIFg_Km-x42iwZqtIGe0DCxpPXoJYUc24jx53DUwpxj241ROPMD0dmPFQU33MyYfCOcKB1dAbMNx0AaTAcHmfac_3NxvqoybcGL_83HUMomd-gajUJJhokUTEaAn_l2eT2J-rKOIoDbO0qNChiMio1O9xIUyHQV96hpptbLB5644oIXhSlt0g0LPSQyTqKccijrR5UBsh6dELVzz-Y.sW1v1BazWNRWppa8_J2llJN0LKww6hOJtQJdMmcrN0w&dib_tag=se&keywords=hands-on+machine+learning+with+scikit-learn%2C+keras%2C+and+tensorflow&nsdOptOutParam=true&qid=1755249752&sprefix=hands-on%2Caps%2C323&sr=8-1" target="_blank" rel="noopener">Hands-On Machine Learning with Scikit-Learn, Keras and Tensorflow (Third Edition)</a> book.</p>
         </div>
       </div>
     </section>
-
-
 
     <!-- Proof Of Concepts TIMELINE -->
     <section id="pocs"><section id="certs">
@@ -581,21 +627,6 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
         <p>End-to-end PII system ensuring GDPR/CCPA alignment, encryption, and re-identification.</p>
     </section></section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-title"><span>About</span><span class="line"></span></div>
-      <div class="cards" style="grid-template-columns: 2fr 1fr;">
-        <article class="card">
-          <h3>What I Do</h3>
-          <p>I design secure, observable, and compliant infrastructure on AWS, then prove the impact with measurable outcomes (fewer regressions, faster recovery, lower risk). I keep it practical: CIS/OWASP for guardrails, ISO 27001 at the estate level, and SIEM to close the loop.</p>
-        </article>
-        <article class="card">
-          <h3>Now</h3>
-          <p>Bangalore (India) → targeting EU remote roles (€50–80K). Building an ML-enhanced security analytics layer over Wazuh/TheHive + QuickSight.</p>
-        </article>
-      </div>
-    </section>
-
     <!-- CONTACT / CONVERSION -->
     <section id="contact">
       <div class="section-title"><span>Contact</span><span class="line"></span></div>
@@ -604,19 +635,17 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
           <h3>Let’s talk</h3>
           <p class="sub">Open to EU remote roles and consulting conversations.</p>
           <div class="meta" style="margin-top:10px">
-            <a class="cta primary" href="mailto:youremail@example.com" aria-label="Email Anand">Email Me</a>
             <a class="cta" href="https://www.linkedin.com/in/anand80b/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="cta" href="/resume/anand-basu-cloudsec-cloudml-resume.pdf" download>Download Résumé (PDF)</a>
-            <a class="cta" href="/resume/anand-basu-impact-sheet.pdf" download>Quick Impact Sheet (1‑pager)</a>
           </div>
         </article>
         <article class="card">
           <h3>Signal in one glance</h3>
-          <ul style="margin:0; padding-left:18px; color: var(--subtext); font-size:14px;">
-            <li>Infra turnaround: 40–60% regression drop</li>
+          <ul style="margin:0; padding-left:18px; color: var(--subtext); font-size:18px;">
+            <li>Infra turnaround: 40 - 60% regression drop</li>
             <li>₹50L+ downtime losses prevented</li>
             <li>SIEM delivery with ML roadmap</li>
-            <li>AWS Security + ML blend</li>
+            <li>AWS Cloud Security + AWS Cloud ML blend</li>
           </ul>
         </article>
       </div>
@@ -625,7 +654,11 @@ section#projects, section#certs { padding-top: 48px !important; padding-bottom: 
 
   <footer>
     <div class="container foot">
-      <div>© <span id="y"></span> Anand Basu</div>
+      <div>© 2025 Anand Basu • Licensed under 
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+          CC BY-NC 4.0
+        </a>
+      </div>
       <div>Built with vanilla HTML/CSS • No trackers • <a class="cta3" href="#home">Back to top</a></div>
     </div>
   </footer>
