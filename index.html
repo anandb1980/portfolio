@@ -29,271 +29,8 @@
   <!-- Headings + Badges -->
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="me" href="https://www.linkedin.com/in/anand80b/"/>
+  <link rel="stylesheet" href="./style.css" />
 
-  <style>
-/* =========================================================
-   THEME TOKENS (Periwinkle + Blue + Magenta + Yellow)
-   ========================================================= */
-:root{
-  /* Base palette */
-  --bg: #D4DAF7;          /* canvas */
-  --text: #340933;        /* deep plum for strong legibility */
-  --accent: #183BF0;      /* brand blue: links + primary CTA */
-  --accent-2: #15803D;    /* magenta: secondary strokes/text */
-  --accent-3: #FDDC22;    /* yellow: highlights / chips */
-
-  /* Surfaces & lines */
-  --card: #ffffff;
-  --muted: #EEF1FD;       /* soft surface on periwinkle */
-  --border: #C7CEF1;      /* derived from bg */
-  --border-neutral: var(--border);
-  --shadow: 0 10px 24px rgba(8, 19, 72, .10);
-
-  /* Text tones */
-  --subtext: #52415A;     /* muted body */
-  --subtext2: #6b7280;
-
-  --radius: 14px;
-}
-
-/* =========================================================
-   BASE + LAYOUT
-   ========================================================= */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body{
-  margin: 0;
-  padding-top: 80px;
-  background: var(--bg);   /* plain background */
-  color: var(--text);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 16px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-.container{ max-width: 1160px; margin: 0 auto; padding: 24px; }
-
-/* App bar */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #E0E7FF;
-  color: #fff;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-header a { color: var(--accent); }
-header a:hover { color: var(--accent-2); }
-.nav{ display:flex; gap:20px; align-items:center; justify-content:space-between; padding:10px 0; }
-
-/* Brand */
-.brand{
-  padding: 4px 18px;
-  display:flex; align-items:center; gap:10px;
-  font-family: "Inter Tight", Inter, system-ui, sans-serif;
-  font-weight: 700; letter-spacing: .01em; font-size: 20px;
-  color: var(--text);
-}
-
-/* Links & utilities */
-a{ color: var(--accent); text-decoration: none; }
-a:hover{ text-decoration: underline; text-underline-offset: 2px; }
-
-/* =========================================================
-   HERO
-   ========================================================= */
-.hero {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: 1.15fr .85fr;
-  align-items: center;
-  padding: 80px 0 24px; /* was 48px 0 24px */
-}
-.hero h1, .hero h2{
-  font-family:"Inter Tight", Inter, system-ui, sans-serif;
-  font-weight:700; letter-spacing:-0.01em;
-  line-height:1.15;
-  font-size: clamp(32px, 4.6vw, 60px);
-  margin:0 0 10px;
-}
-.hero p{ color: var(--subtext); font-size: clamp(16px, 2.2vw, 18px); margin:0 0 18px; }
-.hero p i{ color: var(--subtext2); font-size: 14px; }
-
-.badges{ display:flex; flex-wrap:wrap; gap:10px; margin: 16px 0 24px; }
-.cta-row{ display:flex; gap:12px; flex-wrap:wrap; }
-
-/* KPI card */
-.hero-card{
-  background: linear-gradient(180deg, #ffffff 0%, #FBFCFF 100%);
-  border:1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-.kpi-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:14px; }
-.kpi{
-  background: var(--muted);
-  border:1px solid color-mix(in srgb, var(--border) 70%, #fff 30%);
-  border-radius: var(--radius);
-  padding: 14px;
-}
-.kpi .n{
-  font-family:"Inter Tight", Inter, system-ui, sans-serif;
-  font-variant-numeric: tabular-nums;
-  font-weight:700; letter-spacing:-0.01em;
-  font-size: clamp(22px, 2.5vw, 28px);
-}
-.kpi .t{ color: var(--subtext); font-size: 14px; }
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-section{ padding: 40px 0; }
-.section-title{
-  display:flex; align-items:center; gap:10px;
-  font-family:"Inter Tight", Inter, system-ui, sans-serif;
-  font-weight:600; letter-spacing:.08em;
-  text-transform:uppercase; color: var(--text);
-  font-size: clamp(18px, 2.2vw, 26px);
-  margin: 0 0 18px;
-}
-.section-title .line{ flex:1; height:2px; background: var(--border); }
-.section-title .line2{ display:none; }
-
-/* Cards grid */
-.cards{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
-.card{
-  background: var(--card);
-  border:1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.card:hover{ transform: translateY(-3px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 22%, var(--border) 78%); }
-.card h3{
-  margin: 4px 0 8px;
-  font-family:"Inter Tight", Inter, system-ui, sans-serif;
-  font-size: 19px; font-weight:600; letter-spacing:-0.005em;
-}
-.card p{ color: var(--subtext); margin:0 0 10px; font-size: 16px; }
-.meta{ display:flex; gap:8px; flex-wrap:wrap; }
-
-/* Timeline */
-.timeline .tl-item{
-  border:1px solid color-mix(in srgb, var(--border) 80%, #000 0%) !important;
-  border-radius: 12px !important;
-  padding: 16px !important;
-  background:#FFFFFF !important;
-  box-shadow: 0 2px 10px rgba(10,20,70,.06) !important;
-  margin-bottom: 16px !important;
-}
-.tl-item h4{
-  margin:0 0 4px; font-size:17px;
-  font-family:"Inter Tight", Inter, system-ui, sans-serif !important; font-weight:600 !important;
-}
-.tl-item p{ margin:0; color: var(--subtext); font-size:16px; }
-.tl-header{ display:flex; align-items:center; gap:10px; }
-.tl-header img{ flex-shrink:0; border-radius: 4px; }
-
-/* Footer */
-footer{ padding: 28px 0 48px; color: var(--subtext); }
-.foot{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; }
-
-/* =========================================================
-   CHIPS & CTAs
-   ========================================================= */
-.chip, .chip3, .cta5{
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--accent-3) !important;             /* yellow plate */
-  color: var(--text) !important;                      /* dark plum text */
-  border: 1px solid color-mix(in srgb, var(--accent-3) 50%, #000 0%) !important;
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  font-size: 13px; font-weight:500; letter-spacing:-0.01em; line-height:1.2;
-}
-
-/* Buttons */
-.cta, .cta2, .cta3, .cta3a, .cta3b{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  font-weight: 600; letter-spacing: 0;
-  border-radius: 999px; padding: 10px 18px; font-size: 15px;
-  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .06s ease;
-}
-.cta{ background: var(--accent); color: #fff; border: 1px solid var(--accent); }
-.cta:hover{ background:#0F2ED6; border-color:#0F2ED6; transform: translateY(-1px); }
-
-.cta2{
-  background: transparent; color: var(--accent-2);
-  border:1px solid var(--accent-2);
-}
-.cta2:hover{
-  background: color-mix(in srgb, var(--accent-2) 10%, transparent);
-  transform: translateY(-1px);
-}
-
-.cta3{
-  background: #ffffff; color: var(--accent-2);
-  border:1px solid var(--border);
-}
-.cta3:hover{ background:#F2F4FF; }
-
-.cta3a{ background: #ffffff; color: var(--accent-2); border:1px solid var(--accent-2); }
-.cta3a:hover{ background: color-mix(in srgb, var(--accent-2) 10%, transparent); }
-
-.cta3b{ background: #ffffff; color: var(--accent); border:1px solid var(--accent); }
-.cta3b:hover{ background: color-mix(in srgb, var(--accent) 10%, transparent); }
-
-.cta4{
-  color: var(--accent);
-  font-weight: bold;
-}
-
-/* Section title line color normalization */
-.section-title .line{ background: var(--border); }
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 1024px){
-  .hero{ grid-template-columns: 1fr; }
-}
-@media (max-width: 760px){
-  .cards{ grid-template-columns: 1fr; }
-  .kpi-grid{ grid-template-columns: 1fr; }
-  .nav .hide-sm{ display:none; }
-}
-
-/* =========================================================
-   SMALL RESETS / HARMONIZATION (layout-safe)
-   ========================================================= */
-#certs .timeline{ border-left:none !important; padding-left:0 !important; display:grid; grid-template-columns:1fr; gap: 1px; }
-#certs .tl-item::before, #certs .timeline .section-title{ display:none !important; }
-
-#certs .tl-header{ display:grid; grid-template-columns: 64px 1fr auto; align-items:center; column-gap:12px; }
-#certs .tl-header img{ width:64px; height:56px; }
-#certs .tl-header h4{ grid-column:2; display:inline; margin:0; font-size:16px; font-weight:600; }
-#certs .tl-header h4 + h4{ display:inline; margin-left:8px; font-weight:500; color:var(--subtext); }
-#certs .tl-header .cta3{ grid-column:3; justify-self:end; }
-#certs .tl-item > p{ grid-column:1 / -1; margin:8px 0 0; color:var(--subtext); font-size:.95rem; }
-
-.hero{ padding-top: 32px !important; padding-bottom: 18px !important; }
-section#projects, section#certs{ padding-top: 42px !important; padding-bottom: 8px !important; }
-.about{ padding-top: 12px !important; padding-bottom: 8px !important; }
-
-/* Ensure card borders unify visually */
-.card, .hero-card, .kpi, header, footer{ border-color: var(--border-neutral) !important; }
-
-/* Optional focus ring */
-:focus-visible{
-  outline: 3px solid var(--accent-3);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-  </style>
 </head>
 <body>
   <header role="banner">
@@ -327,12 +64,25 @@ section#projects, section#certs{ padding-top: 42px !important; padding-bottom: 8
       </div>
       <div class="hero-card" aria-label="Key results">
         <div class="kpi-grid">
-          <div class="kpi"><div class="n">₹50L+</div><div class="t">downtime losses prevented via incident response</div></div>
-          <div class="kpi"><div class="n">40 - 60%</div><div class="t">regression reduction after infra redesign</div></div>
-          <div class="kpi"><div class="n">10+ yrs</div><div class="t">at Neviton Technologies Pvt. Ltd. leading AWS & Security</div></div>
-          <div class="kpi"><div class="n">20 yrs</div><div class="t">in IT across Windows, Linux, and AWS</div></div>
+          <a href="brag.html#downtime" class="kpi">
+            <div class="n">₹50L+</div>
+            <div class="t">downtime losses prevented via incident response</div>
+          </a>
+          <a href="brag.html#regression" class="kpi">
+            <div class="n">40 - 60%</div>
+            <div class="t">regression reduction after infra redesign</div>
+          </a>
+          <a href="brag.html#neviton" class="kpi">
+            <div class="n">10+ yrs</div>
+            <div class="t">at Neviton Technologies Pvt. Ltd. leading AWS & Security</div>
+          </a>
+          <a href="brag.html#career" class="kpi">
+            <div class="n">20 yrs</div>
+            <div class="t">in IT across Windows, Linux, and AWS</div>
+          </a>
         </div>
       </div>
+      
     </section>
 
     <!-- ABOUT -->
@@ -494,10 +244,28 @@ section#projects, section#certs{ padding-top: 42px !important; padding-bottom: 8
       <div class="section-title"><span>Currently Building</span><span class="line"></span></div>
         <div class="tl-content">
           <h4>Personally Identifiable Information Anonymizer.</h4>
-          <!--<a class="cta3" href="https://www.coursera.org/specializations/ai-for-cybersecurity?action=enroll" target="_blank" rel="noopener">View.</a>-->
         </div>
         <p>Desiging a secure cloud pipeline with ML-driven PII detection and automated anonymization, integrating scikit-learn classifiers with rule-based masking for sensitive data.</p>
         <p>End-to-end PII system ensuring GDPR/CCPA alignment, encryption, and re-identification.</p>
+        <p><a class="cta4" href="https://www.amazon.in/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/9355421982/ref=sr_1_1?crid=2GO2CEMHH17Y2&dib=eyJ2IjoiMSJ9.lt5rf-bTj6nMywsDrEdE07rvjrIFg_Km-x42iwZqtIGe0DCxpPXoJYUc24jx53DUwpxj241ROPMD0dmPFQU33MyYfCOcKB1dAbMNx0AaTAcHmfac_3NxvqoybcGL_83HUMomd-gajUJJhokUTEaAn_l2eT2J-rKOIoDbO0qNChiMio1O9xIUyHQV96hpptbLB5644oIXhSlt0g0LPSQyTqKccijrR5UBsh6dELVzz-Y.sW1v1BazWNRWppa8_J2llJN0LKww6hOJtQJdMmcrN0w&dib_tag=se&keywords=hands-on+machine+learning+with+scikit-learn%2C+keras%2C+and+tensorflow&nsdOptOutParam=true&qid=1755249752&sprefix=hands-on%2Caps%2C323&sr=8-1" target="_blank" rel="noopener">Read More</a></p>
+
+        <div class="section-title"><span class="line"></span></div>
+        <div class="tl-content">
+          <h4>Personally Identifiable Information Anonymizer.</h4>
+        </div>
+        <p>Desiging a secure cloud pipeline with ML-driven PII detection and automated anonymization, integrating scikit-learn classifiers with rule-based masking for sensitive data.</p>
+        <p>End-to-end PII system ensuring GDPR/CCPA alignment, encryption, and re-identification.</p>
+        <p><a class="cta4" href="https://www.amazon.in/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/9355421982/ref=sr_1_1?crid=2GO2CEMHH17Y2&dib=eyJ2IjoiMSJ9.lt5rf-bTj6nMywsDrEdE07rvjrIFg_Km-x42iwZqtIGe0DCxpPXoJYUc24jx53DUwpxj241ROPMD0dmPFQU33MyYfCOcKB1dAbMNx0AaTAcHmfac_3NxvqoybcGL_83HUMomd-gajUJJhokUTEaAn_l2eT2J-rKOIoDbO0qNChiMio1O9xIUyHQV96hpptbLB5644oIXhSlt0g0LPSQyTqKccijrR5UBsh6dELVzz-Y.sW1v1BazWNRWppa8_J2llJN0LKww6hOJtQJdMmcrN0w&dib_tag=se&keywords=hands-on+machine+learning+with+scikit-learn%2C+keras%2C+and+tensorflow&nsdOptOutParam=true&qid=1755249752&sprefix=hands-on%2Caps%2C323&sr=8-1" target="_blank" rel="noopener">Read More</a></p>
+
+        <div class="section-title"><span class="line"></span></div>
+        <div class="tl-content">
+          <h4>Personally Identifiable Information Anonymizer.</h4>
+        </div>
+        <p>Desiging a secure cloud pipeline with ML-driven PII detection and automated anonymization, integrating scikit-learn classifiers with rule-based masking for sensitive data.</p>
+        <p>End-to-end PII system ensuring GDPR/CCPA alignment, encryption, and re-identification.</p>
+        <p><a class="cta4" href="https://www.amazon.in/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/9355421982/ref=sr_1_1?crid=2GO2CEMHH17Y2&dib=eyJ2IjoiMSJ9.lt5rf-bTj6nMywsDrEdE07rvjrIFg_Km-x42iwZqtIGe0DCxpPXoJYUc24jx53DUwpxj241ROPMD0dmPFQU33MyYfCOcKB1dAbMNx0AaTAcHmfac_3NxvqoybcGL_83HUMomd-gajUJJhokUTEaAn_l2eT2J-rKOIoDbO0qNChiMio1O9xIUyHQV96hpptbLB5644oIXhSlt0g0LPSQyTqKccijrR5UBsh6dELVzz-Y.sW1v1BazWNRWppa8_J2llJN0LKww6hOJtQJdMmcrN0w&dib_tag=se&keywords=hands-on+machine+learning+with+scikit-learn%2C+keras%2C+and+tensorflow&nsdOptOutParam=true&qid=1755249752&sprefix=hands-on%2Caps%2C323&sr=8-1" target="_blank" rel="noopener">Read More</a></p>
+
+
     </section></section>
 
     <!-- CONTACT / CONVERSION -->
@@ -509,7 +277,7 @@ section#projects, section#certs{ padding-top: 42px !important; padding-bottom: 8
           <p class="sub">Available for EU MSSP/MSP CloudSec roles (€50 to €80K). <br />Contact me directly.</p>
           <div class="meta" style="margin-top:10px">
             <a class="cta" href="https://www.linkedin.com/in/anand80b/" target="_blank" rel="noopener">LinkedIN</a>
-            <a class="cta" href="/resume/anand-basu-cloudsec-cloudml-resume.pdf" download>Download Résumé (PDF)</a>
+            <a class="cta" href="./resume.html">Résumé</a>
           </div>
         </article>
         <article class="card">
