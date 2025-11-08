@@ -167,11 +167,12 @@ header a:hover { color: var(--accent-2); }
 section { padding: 40px 0; }
 .section-title {
   display: flex; align-items: center; gap: 10px;
-  font-family: "Inter Tight", Inter, system-ui, sans-serif;
-  font-weight: 600; letter-spacing: .08em;
+  font-family: "Roboto", Inter, system-ui, sans-serif;
+  font-weight: 800; letter-spacing: 0.0em;
   text-transform: uppercase;
   color: var(--text);
-  font-size: clamp(18px, 2.2vw, 26px);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-style: normal;
   margin: 0 0 18px;
 }
 .section-title .line { flex: 1; height: 2px; background: var(--border); }
