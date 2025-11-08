@@ -259,18 +259,10 @@
       <div class="section-title"><span>Currently Building</span><span class="line"></span></div>
         <div class="tl-content">
           <p style="color:var(--subtext);font-size:15px;margin-bottom:12px;">
-            Im building a vendor-neutral, production-grade AI-SecOps POC that demonstrates end-to-end detection -> decision -> adaptation:<br /> 
-            Suricata (network sensor) observes traffic to modern vulnerable apps (OWASP Juice Shop, VAmPI) and Cowrie (honeypot).<br />
-            Suricata forwards EVE-JSON into Wazuh for host/context enrichment.<br />
-            Wazuh and Suricata feed a DuckDB REST IR broker that becomes your auditable feature store.<br /> 
-            An ML layer (IsolationForest, Prophet, tracked in MLflow and monitored with Evidently) scores anomalies and reports drift.<br /> 
-            n8n runs an FSM SOAR that executes playbooks and writes ticket outcomes back to DuckDB as feedback for retraining.<br /> 
-            Higher layers include a Threat Graph (Neo4j/NetworkX + embeddings) for relationship/context reasoning and a Temporal Graph Neural approach for predictive what-if simulation (“graph-time” digital twin).<br /> 
-            Governance primitives—model lineage, SHAP explainability panels, human-in-the-loop overrides, pseudonymization—align the demo with NIS2/GDPR and the EU AI Act.<br />
-            <br />
-            Future plan: 
-            Harden MLOps (automated PSI/PSR triggers → retrain → promote), add reinforcement agents to evolve playbooks, federate DuckDB edges for multi-tenant MSP deployment, and expose a simulation/sandbox for policy experimentation and executive risk reports.<br /> 
-            Package as “AI-SecOps Lite” — an auditable, explainable SOC prototype targeted at EU MSPs who need cost-efficient, compliant, predictive detection and automated response.<br />
+            <h4>AI-SecOps Lite – Vendor-Neutral, Production-Grade SOC Prototype</h4><br />
+                Detection → Decision → Adaptation: Suricata + Wazuh + DuckDB + MLflow + n8n pipeline with explainable ML (IsolationForest, Prophet, SHAP) and automated SOAR feedback loops.<br />
+                Governance & Compliance: Built-in model lineage, pseudonymization, human-in-loop controls aligned with NIS2/GDPR/EU AI Act.<br />
+                Future-Ready: Reinforcement agents for adaptive playbooks, federated DuckDB for MSPs, and sandboxed simulations for risk and policy testing.<br />
           </p>
         </div>
         
