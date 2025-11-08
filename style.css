@@ -183,7 +183,7 @@ section { padding: 40px 0; }
   font-style: normal;
   margin: 0 0 18px;
 }
-.section-title .line { flex: 1; height: 2px; background: var(--subtext); }
+.section-title .line { flex: 1; height: 1px; background: var(--subtext); }
 
 .section-title2 {
   display: flex; align-items: center; gap: 10px;
@@ -194,7 +194,7 @@ section { padding: 40px 0; }
   font-size: clamp(16px, 2.2vw, 16px);
   margin: 0 0 18px;
 }
-.section-title2 .line { flex: 1; height: 2px; background: var(---subtext); }
+.section-title2 .line { flex: 1; height: 1px; background: var(---subtext); }
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .card {
