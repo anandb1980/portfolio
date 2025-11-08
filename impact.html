@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anand Basu — Impact Sheet (CloudSec + Compliance)</title>
+  <style>
+    :root{
+      --bg:#f6efe6;          /* warm parchment */
+      --paper:#fffaf2;
+      --ink:#1f2a37;         /* deep slate */
+      --muted:#566173;       /* secondary text */
+      --accent:#1f6feb;      /* link/cta */
+      --accent-ink:#0b1220;
+      --chip:#e8ecef;
+      --ok:#0e9f6e;
+      --warn:#b45309;
+      --shadow:0 8px 30px rgba(31,42,55,.10);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0f1115; --paper:#12151b; --ink:#e8edf2; --muted:#a7b0bc; --chip:#1a2029; --accent:#7aa2ff; --accent-ink:#e8edf2; --shadow:0 8px 30px rgba(0,0,0,.45); }
+    }
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,var(--bg),var(--paper)); color:var(--ink);
+      font: 15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+    }
+    .wrap{max-width:980px; margin:40px auto; padding:0 20px 80px}
+    .sheet{background:var(--paper); border-radius:14px; box-shadow:var(--shadow); padding:28px 28px 24px}
+    header{display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; margin-bottom:12px}
+    h1{font-size:28px; line-height:1.15; margin:0}
+    h1 small{display:block; font-weight:600; color:var(--muted); font-size:13px; letter-spacing:.3px}
+    .meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .chip{background:var(--chip); color:var(--ink); border-radius:999px; padding:6px 10px; font-weight:600; font-size:12px}
+    .cta{appearance:none; border:none; background:var(--accent); color:var(--accent-ink); font-weight:700; padding:10px 14px; border-radius:10px; text-decoration:none; display:inline-flex; align-items:center; gap:8px}
+    .cta:hover{filter:brightness(1.03)}
+    .grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; margin-top:14px}
+    .card{background:transparent; border:1px solid rgba(31,42,55,.10); border-radius:12px; padding:18px}
+    .card h3{margin:0 0 10px; font-size:16px; letter-spacing:.2px}
+    .card p{margin:8px 0 0; color:var(--muted)}
+    ul.kpi{margin:8px 0 0 20px}
+    ul.kpi li{margin:6px 0}
+    .tier{display:grid; gap:10px}
+    .tier h4{margin:12px 0 4px; font-size:14px; text-transform:uppercase; letter-spacing:.4px; color:var(--muted)}
+    .badge{font-weight:700}
+    .explain{color:var(--muted); margin:4px 0 0}
+    .split{display:grid; gap:10px; grid-template-columns:1fr 1fr}
+    footer{margin-top:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:12px}
+    .muted{color:var(--muted)}
+
+    /* print - A4 single page */
+    @page{size: A4; margin:14mm}
+    @media print{
+      body{background:#fff}
+      .wrap{margin:0; padding:0}
+      .sheet{box-shadow:none; border:0}
+      .cta{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="sheet">
+      <header>
+        <div>
+          <h1>
+            Anand Basu — Impact Sheet
+            <small>CloudSec + Compliance • EU MSSP/MSP Remote Roles (€50–80K) • Kolkata, India (Remote-first)</small>
+          </h1>
+          <div class="meta" style="margin-top:10px">
+            <span class="chip">18+ yrs • AWS • DevOps • Security • ML</span>
+            <span class="chip">SIEM • ISO 27001 • GDPR • NIST</span>
+            <a class="cta" href="https://www.linkedin.com/in/anand80b/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <div class="meta" style="justify-self:end; align-self:start">
+          <span class="chip" title="Primary output channel">PDF-ready</span>
+          <span class="chip" title="Last updated">Updated: Sep 02, 2025</span>
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- Left column -->
+        <section class="card">
+          <h3>⚡ Core Impact</h3>
+          <ul class="kpi">
+            <li><b>₹50L+ downtime losses prevented</b> via rapid IR across crypto-mining & on‑prem/AWS incidents with zero business disruption.</li>
+            <li><b>40–60% regression reduction</b> by redesigning EdTech AWS infra with RBAC, patching, and CIS/OWASP guardrails.</li>
+            <li><b>SIEM delivery</b>: Wazuh + TheHive with QuickSight analytics; ISO 27001:2022 alignment across estates.</li>
+          </ul>
+
+          <h3 style="margin-top:16px">🔧 Proof of Delivery</h3>
+          <ul class="kpi">
+            <li><b>SIEM Platform (AWS + Wazuh + TheHive)</b> — end‑to‑end detection & triage, dashboards, IR playbooks (NIST‑aligned).</li>
+            <li><b>PII Anonymizer Pipeline</b> — ML‑assisted detection + rule‑based masking for GDPR/DPDP‑aligned data handling.</li>
+            <li><b>Insurance Compliance Enablement</b> — audit‑pass redesign that unlocked client cyber‑insurance coverage.</li>
+          </ul>
+        </section>
+
+        <!-- Right column -->
+        <aside class="card">
+          <h3>📚 Certification Stack</h3>
+          <p class="muted" style="margin-top:4px">Blending SecOps with Compliance — from AWS hardening to governance frameworks and EU law — to create a unified CloudSec capability for MSSPs and regulated industries.</p>
+
+          <div class="tier">
+            <h4>Core Pillar</h4>
+            <div>
+              <div class="badge">AWS Certified Security – Specialty</div>
+              <p class="explain">Establishes the baseline every secure cloud must have — identity boundaries, encryption, and detection that all governance and compliance layers depend on.</p>
+            </div>
+
+            <h4>Primary Augments</h4>
+            <div>
+              <div class="badge">NIST Cybersecurity & Risk Mgmt (CSF + RMF) — Coursera/Packt</div>
+              <p class="explain">Turns technical hardening into a governance program — CSF/RMF link incidents, risk treatment, and audits directly to cloud controls.</p>
+            </div>
+            <div>
+              <div class="badge">GDPR Specialization — Coursera/Packt</div>
+              <p class="explain">Anchors AWS security in EU law — maps encryption, logging, and retention into GDPR obligations to make controls audit‑defensible.</p>
+            </div>
+
+            <h4>Secondary Augments</h4>
+            <div>
+              <div class="badge">CCSP Specialization — Coursera/Pearson</div>
+              <p class="explain">Structured coverage of cloud‑security domains — a supporting signal beyond the AWS ecosystem.</p>
+            </div>
+            <div>
+              <div class="badge">Data Security & Information Privacy — Coursera/Macquarie</div>
+              <p class="explain">Conceptual base for NIST and GDPR — privacy principles, anonymization, and data handling that make frameworks enforceable.</p>
+            </div>
+            <div>
+              <div class="badge">AI for Cybersecurity — Coursera</div>
+              <p class="explain">Applied AI patterns for threat defense (anomaly detection, adversarial modeling) to enrich SOC workflows.</p>
+            </div>
+
+            <h4>Stealth Differentiator (Reveal Selectively)</h4>
+            <div>
+              <div class="badge">AWS Certified Machine Learning – Specialty</div>
+              <p class="explain">Extends security into predictive analytics — secure ML lifecycle and encrypted data pipelines for AI‑assisted SecOps.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="card" style="margin-top:22px">
+        <h3>🎯 Positioning Statement</h3>
+        <p>I blend SecOps with Compliance. I can harden AWS estates, align them to NIST and GDPR, and build AI‑assisted pipelines for predictive SecOps — ready to deploy across regulated EU clients.</p>
+        <div class="split" style="margin-top:12px">
+          <a class="cta" href="https://anandscorner.me.in/resume/anand-basu-resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+          <a class="cta" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2025 Anand Basu</span>
+        <span class="muted">This one‑pager mirrors the portfolio site style. Use the Print button to export a PDF.</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
