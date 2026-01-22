@@ -97,6 +97,15 @@ header a:hover { color: var(--accent-2); }
   color: var(--text);
 }
 
+@media (max-width: 768px) {
+  .hero-avatar {
+    margin-bottom: 6px; 
+    filter: saturate(0.9); 
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .hero-header {
   display: flex; align-items: center; gap: 10px;
   font-family: Merriweather, "Inter Tight", Inter, system-ui, sans-serif;
