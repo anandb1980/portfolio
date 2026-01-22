@@ -14,10 +14,11 @@
   --text: #181066;
   --subtext: #010b18;
   --subtext2: #d3d3d4;
+  --subtext3: #010b18;
 
   --accent: #183BF0;
   --accent-2: #15803D;
-  --accent-3: #4eaf35;
+  --accent-3: #95ccc0;
   --accent-4: #0a1f86;
 
   --radius: 14px;
@@ -35,10 +36,11 @@
   --text: #E9ECF5;
   --subtext: #A3ACC2;
   --subtext2: #6E778A;
+  --subtext3: #010b18;
 
   --accent: #3A63FF;
   --accent-2: #00B46E;
-  --accent-3: #216e0d;
+  --accent-3: #95ccc0;
   --accent-4: #4fb3a5;
 }
 
@@ -270,7 +272,7 @@ footer {
   padding: 6px 12px;
   border-radius: 999px;
   background: var(--accent-3);
-  color: var(--text);
+  color: var(--subtext3);
   border: 1px solid rgba(0, 0, 0, 0.15);
   font-family: Merriweather, "JetBrains Mono", monospace;
   font-size: 13px;
