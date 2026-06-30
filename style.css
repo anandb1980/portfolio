@@ -1,33 +1,32 @@
 /* ==========================================================================
-   ACADEMIC MINIMALISM & RESEARCH LOGIC
+   CYBERNETIC MINIMALISM & OPERATIONAL LOGIC
    ========================================================================== */
 
    :root {
-    /* High contrast, print-like layout palette */
+    /* Stark, print-like layout palette with a low-saturation telemetry signature */
     --bg-color: #fcfbfa;       /* Off-white parchment */
     --text-primary: #111111;   /* True dense black */
-    --text-muted: #555555;     /* Dark ash gray for dense prose */
-    --text-light: #7096B8;     /* Light gray for meta indices */
-    --accent-line: #222222;    /* Stark accent bounds */
+    --text-muted: #444444;     /* Deep ash gray for highly legible prose */
+    --text-light: #4acac4;     /* Technical index gray */
+    --accent-signal: #15803d;  /* Control green indicator (Light theme execution) */
     --btn-bg: #111111;
     --btn-text: #ffffff;
     
     /* Sizing and scaling architectures */
-    --max-width: 800px;        /* Strict tracking limits for optimal reading density */
-    --font-serif: "Playfair Display", "Georgia", serif;
-    --font-hero: "Space Grotesk", sans-serif;
-    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    --max-width: 760px;        /* Strict reading bounds optimized for prose density */
+    --font-header: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
   }
   
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg-color: #121416;     /* Deep technical slate charcoal */
-      --text-primary: #f5f5f7; /* High contrast silver-white */
-      --text-muted: #b0b5c0;   /* Muted gray for readable prose text */
-      --text-light: #6e737d;
-      --accent-line: #f5f5f7;
-      --btn-bg: #f5f5f7;
-      --btn-text: #121416;
+      --bg-color: #111317;     /* Offline system charcoal */
+      --text-primary: #f3f4f6; /* High-contrast crisp silver */
+      --text-muted: #b3bac7;   /* Muted gray for reading long blocks */
+      --text-light: #626875;
+      --accent-signal: #00b46e; /* Luminescent active node green (Dark theme execution) */
+      --btn-bg: #f3f4f6;
+      --btn-text: #111317;
     }
   }
   
@@ -38,17 +37,17 @@
   * { box-sizing: border-box; }
   
   html {
-    scroll-behavior: auto; /* Disabled smooth scrolling per specification */
+    scroll-behavior: auto; /* Disabled smooth scrolling per minimalist specification */
     background-color: var(--bg-color);
   }
   
   body {
     margin: 0;
-    padding: 120px 0 60px 0; /* Huge upper whitespace gap */
+    padding: 140px 0 80px 0; /* Massive upper whitespace distribution */
     color: var(--text-primary);
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
     font-size: 15px;
-    line-height: 1.75; /* Expanded line metrics for dense text presentation */
+    line-height: 1.75;       /* Expanded tracking lines for dense paragraphs */
     letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
   }
@@ -60,15 +59,15 @@
   }
   
   /* ==========================================================================
-     STARK HEADER MODULE
+     TELEMETRY HEADER & NAVIGATION
      ========================================================================== */
   
   header {
     position: fixed;
     top: 0; left: 0; width: 100%;
-    background: rgba(252, 251, 250,5);
+    background: #fcfbfa;
     z-index: 1000;
-    padding: 30px 0;
+    padding: 40px 0;
   }
   
   .nav-container {
@@ -78,18 +77,32 @@
   }
   
   .brand {
-    font-weight: 800;
-    letter-spacing: 0.10em;
-    font-size: 18px;
+    font-family: var(--font-header);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Active system state pulse marker */
+  .brand::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent-signal);
+    border-radius: 50%;
+    margin-right: 10px;
   }
   
   nav a {
-    color: var(--text-muted);
+    font-family: var(--font-header);
+    color: var(--text-light);
     text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
     margin-left: 24px;
-    transition: color 0.15s ease;
+    transition: color 0.1s ease;
   }
   
   nav a:hover {
@@ -97,8 +110,8 @@
   }
   
   nav a.nav-cta {
-    font-weight: 700;
     color: var(--text-primary);
+    font-weight: 700;
     border-bottom: 1px solid var(--text-primary);
   }
   
@@ -107,72 +120,69 @@
      ========================================================================== */
   
   section {
-    padding: 60px 0; /* Massive vertical whitespace separating concepts */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 70px 0; /* Expanded empty spaces separating systemic concepts */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
   @media (prefers-color-scheme: dark) {
-    section { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    section { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
   }
   
   .meta-header {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: var(--font-header);
+    font-size: 15px;
+    letter-spacing: 0.05em;
     color: var(--text-light);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   
   h1 {
-    font-family: var(--font-serif);
-    font-size: clamp(32px, 5vw, 44px);
-    font-weight: 200;
-    line-height: 1.2;
-    margin: 0 0 20px 0;
+    font-family: var(--font-header);
+    font-size: clamp(26px, 4.5vw, 36px);
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0 0 24px 0;
+    text-transform: uppercase;
     letter-spacing: -0.02em;
   }
   
   .subtitle {
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.6;
     color: var(--text-muted);
     font-weight: 400;
-    max-width: 90%;
+    max-width: 100%;
   }
   
   h2 {
-    font-size: 13px;
+    font-family: var(--font-header);
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
+    letter-spacing: 0.12em;
+    font-weight: 900;
     color: var(--text-light);
-    margin: 0 0 40px 0;
+    margin: 0 0 44px 0;
   }
   
   .prose-block {
-    margin-bottom: 48px; /* High spacing between deep case studies */
+    margin-bottom: 54px; /* Strong vertical spacing between distinct logs */
   }
   
   h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 12px 0;
+    font-family: var(--font-header);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 14px 0;
     letter-spacing: -0.01em;
     color: var(--text-primary);
+    border-left: 2px solid var(--accent-signal); /* Discrete technical vertical banner */
+    padding-left: 14px;
   }
-
-  hero {
-    font-family: var(--font-hero);
-    font-size: clamp(22px, 12vw, 32px);
-    font-weight: 600;
-    line-height: 1.2;
-    margin: 0 0 20px 0;
-    letter-spacing: -0.02em;
-  }
-
+  
   p {
     color: var(--text-muted);
-    margin: 0 0 16px 0;
-    text-align: justify; /* Academic publication framing */
+    margin: 0 0 18px 0;
+    text-align: left; /* Left-aligned configuration to capture systemic shapes over hard justify */
   }
   
   strong {
@@ -181,28 +191,32 @@
   }
   
   /* ==========================================================================
-     LISTS & LIST ENGINES
+     ACADEMIC-STYLE COMPLIANCE LISTS
      ========================================================================== */
   
   .academic-list {
-    padding-left: 20px;
+    padding-left: 16px;
     margin: 0;
   }
   
   .academic-list li {
     color: var(--text-muted);
-    margin-bottom: 16px;
-    text-align: justify;
+    margin-bottom: 18px;
+    list-style-type: square;
+  }
+  
+  .academic-list li::marker {
+    color: var(--accent-signal);
   }
   
   /* ==========================================================================
-     STRENGTHENED CALL TO ACTION FRAMEWORKS
+     STRENGTHENED ACTION BLOCKS
      ========================================================================== */
   
   .terminal-cta p {
     font-size: 16px;
     color: var(--text-muted);
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
   
   .action-row {
@@ -212,12 +226,14 @@
   }
   
   .primary-btn, .secondary-btn {
+    font-family: var(--font-header);
     display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
     text-decoration: none;
-    padding: 12px 28px;
-    transition: transform 0.1s ease, opacity 0.15s ease;
+    padding: 14px 32px;
+    transition: opacity 0.1s ease, background-color 0.1s ease;
   }
   
   .primary-btn {
@@ -226,7 +242,7 @@
   }
   
   .primary-btn:hover {
-    opacity: 0.9;
+    opacity: 0.85;
   }
   
   .secondary-btn {
@@ -236,19 +252,20 @@
   }
   
   .secondary-btn:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: rgba(0, 0, 0, 0.04);
   }
   @media (prefers-color-scheme: dark) {
-    .secondary-btn:hover { background-color: rgba(255, 255, 255, 0.03); }
+    .secondary-btn:hover { background-color: rgba(255, 255, 255, 0.04); }
   }
   
   /* ==========================================================================
-     FOOTER INDEX DATA
+     SYSTEM TERMINAL FOOTER DATA
      ========================================================================== */
   
   footer {
-    padding: 40px 0 80px 0;
-    font-size: 12px;
+    padding: 40px 0 60px 0;
+    font-family: var(--font-header);
+    font-size: 11px;
     color: var(--text-light);
   }
   
@@ -257,18 +274,18 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 28px;
   }
   @media (prefers-color-scheme: dark) {
-    .footer-container { border-top: 1px solid rgba(255, 255, 255, 0.05); }
+    .footer-container { border-top: 1px solid rgba(255, 255, 255, 0.04); }
   }
   
   /* Responsive adjustments */
   @media (max-width: 600px) {
-    body { padding-top: 80px; }
-    .nav-container { flex-direction: column; gap: 12px; align-items: flex-start; }
-    nav a { margin-left: 0; margin-right: 16px; }
+    body { padding-top: 100px; }
+    .nav-container { flex-direction: column; gap: 16px; align-items: flex-start; }
+    nav a { margin-left: 0; margin-right: 20px; }
     .action-row { flex-direction: column; width: 100%; }
     .primary-btn, .secondary-btn { text-align: center; width: 100%; }
   }
