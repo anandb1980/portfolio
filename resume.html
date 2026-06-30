@@ -32,7 +32,7 @@
       <ul class="academic-list">
         <li><strong>Cloud Security & Governance:</strong> IAM, SCP, GuardDuty, SecurityHub, SIEM (Wazuh, ELK, TheHive).</li>
         <li><strong>Infrastructure Automation:</strong> CI/CD, GitOps, IaC (Terraform, Ansible, CodePipeline).</li>
-        <li><strong>Compliance & Privacy:</strong> HIPAA, ISO 27001, GDPR alignment, security audits.</li>
+        <li><strong>Compliance & Privacy:</strong> ISO 27001, CIS alignment, security audits.</li>
         <li><strong>FinOps & Observability:</strong> Cost control, tagging enforcement, QuickSight dashboards.</li>
         <li><strong>Machine Learning Integration:</strong> Anomaly detection, privacy risk scoring, pipeline security.</li>
       </ul>
@@ -42,18 +42,48 @@
       <h2>02 / Experience</h2>
 
       <div class="prose-block">
-        <h3>Neviton Technologies Pvt. Ltd. — Security & Infrastructure Lead</h3>
+        <h3>Neviton Technologies Pvt. Ltd. - Security & Infrastructure Lead</h3>
         <div class="meta-header">BENGALURU, INDIA // 2015 - PRESENT</div>
         <p>
-          Led DevSecOps transformation across education, media & entertainment, and manufacturing. Implemented SecurityHub, GuardDuty, ELK, along with custom statistical modelling scripts for User Behaviour Analysis and Application performance and end-point analysis. Designed AWS multi-account security with central logging. Contained multiple crypto-mining intrusions with no downtime. Developed risk-scoring and automated CI/CD security gates. Passed ISO 27001/HIPAA audits with aligned infrastructure. <strong>Impact:</strong> enabled cyber-insurance coverage; prevented ₹50L+ in losses.
+          I have led DevSecOps transformation across education, media & entertainment, and manufacturing. 
+        </p>
+        <p>
+          Inherited a production environment with no meaningful observability, where operational health was judged primarily through user complaints and basic CPU/RAM monitoring. Reframed the problem with the client by establishing that effective operations require measurable system behaviour, then built consensus through architecture reviews, technical presentations, and high- and low-level design documentation.
+        </p>
+        <p>
+          Designed and implemented an observability platform using Elasticsearch, Logstash, Kibana, Filebeat, and Metricbeat to centralize application, infrastructure, and database telemetry. The platform provided historical visibility into system behaviour and established a reliable operational baseline.
+        </p>
+        <p>
+          Extended the platform beyond traditional monitoring by developing a lightweight analytics layer in Python using scikit-learn and NeuralProphet. Implemented statistical models that ranked system instability using a weighted Error Density Index, clustered user behaviour to distinguish normal usage from anomalous activity, and correlated crashes and latency spikes with preceding request patterns.
+        </p>
+        <p>
+          Developed additional analytical tooling to distinguish application defects from infrastructure bottlenecks, separating "fast but broken" services from genuine resource exhaustion. This significantly reduced false escalations, improved operational focus, and enabled engineering teams to prioritize incidents based on evidence rather than assumptions.
+        </p>
+        <p>
+          Introduced predictive baselines through time-series modelling, shifting operations from reactive monitoring to proactive detection of emerging system stress. The resulting platform accelerated root-cause analysis, improved decision quality during incidents, and enabled evidence-based operational reporting on demand.
+        </p>
+        <p>
+          Led the design and implementation of a telemetry-first observability platform using Prometheus and Grafana, replacing metric-centric monitoring with evidence-driven detection. Developed a forensic search capability that reconstructed complete user journeys by correlating application events, latency, failures, and behavioural baselines (P95/P99), enabling explainable incident analysis and faster root-cause identification.
+        </p>
+        <p>
+          Designed statistical modelling pipelines using scikit-learn and NeuralProphet to establish historical traffic baselines, seasonal trends, and expected system behaviour. Compared live telemetry against learned baselines to identify meaningful deviations and eliminate dependence on static alert thresholds.
+        </p>
+        <p>
+          Implemented real-time behavioural clustering to differentiate normal activity from anomalous behaviour, enabling incidents to be prioritised by behavioural deviation and business impact rather than alert volume. Improved signal quality, reduced false positives, and enabled earlier detection of emerging operational issues.
+        </p>
+        <p>
+          <strong>Impact:</strong> Enabled visiblity into infrastructure and application performance; Enabled cyber-insurance coverage; Prevented ₹50L+ in losses.
         </p>
       </div>
 
       <div class="prose-block">
-        <h3>Tesco HSC, IBM & Others — Infrastructure Engineering Roles</h3>
+        <h3>Tesco HSC, IBM & Others - Infrastructure Engineering Roles</h3>
         <div class="meta-header">2002 - 2015</div>
         <p>
           Built automation scripts, recovery systems, and monitoring workflows. Delivered high-stability operations in 24×7 global environments.
+        </p>
+        <p>
+          Led automation efforts of manual tooling for ticketing systems. Implemented Microsoft Baseline Analyzer as a part of compliance team in IBM India.
         </p>
       </div>
     </section>
