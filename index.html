@@ -3,324 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anand Basu - CloudSec & CloudMLOps Portfolio</title>
-  <meta name="description" content="AWS Cloud Security & CloudML engineer. Crisis-tested infra transformation, SIEM delivery, and compliance at scale. Prevented ₹50L+ downtime, 40–60% regression drop after redesign." />
-  <meta name="keywords" content="Cloud Security, CloudSec, Cloud ML, CloudML, AWS Security, AWS DevOps, SIEM, Wazuh, TheHive, QuickSight, ISO 27001, CIS, OWASP, Bangalore, EU Remote"/>
-  <meta name="author" content="Anand"/>
-
-  <!-- Canonical & OG/Twitter cards -->
-  <link rel="canonical" href="https://anandscorner.me.in/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="CloudSec & CloudML"/>
-  <meta property="og:title" content="AWS Cloud Security & CloudML – Crisis-tested Delivery"/>
-  <meta property="og:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40 - 60% regression drop post redesign. Open to EU remote roles."/>
-  <meta property="og:url" content="https://anandscorner.me.in/"/>
-  <meta property="og:image" content="https://anandscorner.me.in/og-card.png"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="AWS Cloud Security & CloudML – Crisis-tested Delivery"/>
-  <meta name="twitter:description" content="Infra turnaround, SIEM, and compliance. Prevented ₹50L+ downtime; 40 - 60% regression drop post redesign."/>
-  <meta name="twitter:image" content="https://anandscorner.me.in/og-card.png"/>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Body -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Headings + Badges -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="me" href="https://www.linkedin.com/in/anand80b/"/>
-  <link rel="stylesheet" href="./style.css" />
-
+  <title>Anand Basu - Platform Security Architect</title>
+  <meta name="description" content="Cloud security and infrastructure specialist. 20+ years in IT, a decade focused on AWS security, compliance, and ML integration." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header role="banner">
-    <div class="container nav" aria-label="Main navigation">
-      <div class="brand"><span>ANAND BASU</span></div>
-      <nav class="hide-sm" role="navigation" aria-label="Primary">
-        <a class="cta3" href="#projects">Projects</a>
-        <a class="cta3" href="#skills">Skills</a>
-        <a class="cta3" href="#certs">Certs</a>
+    <div class="nav-container">
+      <div class="brand">ANAND BASU</div>
+      <nav role="navigation" aria-label="Primary">
+        <a href="#abstract">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="brag.html">Case Studies</a>
+        <a href="resume.html">Résumé</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
-      <div class="cta-row">
-        <a class="cta3" href="#contact">Contact</a>
-        <button id="theme-toggle" class="cta6" title="Toggle theme">🌓</button>
-      </div>
     </div>
   </header>
 
-  <main class="container" id="content">
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-left">
-        <img src="./anand.jpg" alt="Anand Basu – Cloud Security Architect" class="hero-avatar" loading="eager"/>
-        <div class="hero-header">Cloud Security Architect - AWS & Kubernetes</div>
-        <p>
-          I design secure, observable, and compliance-ready cloud platforms using
-          automation, policy-driven controls, and feedback loops. Proven delivery
-          across AWS environments under real production constraints.
-        </p>
+  <main class="content-container">
 
-        <div class="badges" id="skills">
-          <span class="cta5">Cloud Security Architecture</span>
-          <span class="cta5">AWS Security</span>
-          <span class="cta5">Kubernetes / OpenShift</span>
-          <span class="cta5">Security Automation</span>
-          <span class="cta5">NIST / Compliance Engineering</span>
-        </div>
-      </div>
-      <div class="hero-card" aria-label="Key results">
-        <div class="kpi-grid">
-          <a href="brag.html#downtime" class="kpi">
-            <div class="n">₹50L+</div>
-            <div class="t">downtime losses prevented via incident response</div>
-          </a>
-          <a href="brag.html#regression" class="kpi">
-            <div class="n">40 - 60%</div>
-            <div class="t">regression reduction after infra redesign</div>
-          </a>
-          <a href="brag.html#neviton" class="kpi">
-            <div class="n">10+ yrs</div>
-            <div class="t">at Neviton Technologies Pvt. Ltd. leading Cloud & Security</div>
-          </a>
-          <a href="brag.html#career" class="kpi">
-            <div class="n">20 yrs</div>
-            <div class="t">in IT across Windows, Linux, Kubernetes, and AWS Cloud</div>
-          </a>
-        </div>
-      </div>
-      
+    <!-- HERO / IDENTITY -->
+    <section id="identity">
+      <div class="meta-header">REMOTE ROLES // CLOUD SECURITY & COMPLIANCE</div>
+      <h1>Platform Security Architect</h1>
+      <div class="subtitle">I design secure AWS platforms that enable organizations to scale with confidence.
+My work combines cloud security, governance, observability, and automation to build resilient infrastructure that satisfies operational, regulatory, and business requirements.</div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="section-title"><span>About</span><span class="line"></span></div>
-      <div class="cards" style="grid-template-columns: 2fr 1fr;">
-        <article class="card">
-          <h3>What I Do</h3>
-          <p>I design and govern cloud security architectures that are secure-by-default, and audit-ready at scale. I use NIST CSF / RMF to translate security and compliance requirements into policy-driven guardrails, with continuous monitoring, and closed-loop detection, thereby reducing operational risk. </p>
-        </article>
-        <article class="card">
-          <h3>Now</h3>
-          <p>Bangalore (India) : targeting India / EU remote roles. Currently focused on cloud security architecture, automated governance, and observability-driven risk reduction across AWS environments. Preparing for EU-remote Cloud Security Architect roles.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-title"><span>Featured Projects & Impact</span><span class="line"></span></div>
-      <div class="cards">
-        <article class="card">
-          <h3>EdTech Infra Turnaround</h3>
-          <p>Inherited severely mismanaged infra; stabilized and rebuilt to compliance-ready state. Built ELK observability. Enabled cyber-insurance audit pass.</p>
-          <div class="meta">
-            <span class="cta5" title="Role-Based Access Control">RBAC</span>
-            <span class="cta5">CIS</span>
-            <span class="cta5">ELK</span>
-            <span class="cta5">Windows & Linux</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Security Incident Response</h3>
-          <p>Neutralized multiple crypto-mining compromises. Root-caused, cleaned, killed interdependent processes, and hardened systems without downtime spillover.</p>
-          <div class="meta">
-            <span class="cta5">Incident Management</span>
-            <span class="cta5">Threat Hunting</span>
-            <span class="cta5">Automation</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>SIEM Platform (Wazuh + TheHive)</h3>
-          <p>Designed and deployed SIEM on AWS EC2 with TheHive, integrated with QuickSight for estate analytics; ML classifier planned for correlation and YARA generation.</p>
-          <div class="meta">
-            <span class="cta5">Wazuh</span>
-            <span class="cta5">TheHive</span>
-            <span class="cta5">QuickSight</span>
-            <span class="cta5">AWS</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- Sector trust chips -->
-      <div class="badges" style="margin-top:14px" aria-label="Sectors served">
-        <span class="cta5" title="Education">Education</span>
-        <span class="cta5" title="Media & Entertainment">Media</span>
-        <span class="cta5" title="Manufacturing">Manufacturing</span>
-      </div>
-    </section>
-
-    <!-- ACTIVE CERTIFICATIONS -->
-    <section id="certs">
-      <div class="section-title"><span>Active Certifications</span><span class="line"></span></div>
-
-      <p style="color:var(--subtext);font-size:17px;margin-bottom:12px;">
-        Completed certifications demonstrate operational capability in cloud security, governance, and compliance frameworks.
+    <section id="abstract">
+      <h2>01 / About</h2>
+      <p>
+        Modern cloud security extends beyond firewalls and vulnerability management. I design secure platforms where identity, governance, monitoring, automation, and compliance are integrated into the architecture rather than added afterwards. Over the past two decades I have worked across enterprise infrastructure, DevSecOps, cloud transformation, and incident response, helping organizations improve resilience while reducing operational risk.
       </p>
+    </section>
 
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png" alt="Coursera Logo">
-            <h4>NIST Cybersecurity & Risk Management Specialization - Packt (Coursera) | Sept 2025</h4>
-            <a class="cert-link" href="https://www.coursera.org/account/accomplishments/specialization/QKQKQ1OS79W3" target="_blank" rel="noopener">Verify</a>
-          </div>
-          <p>Aligns AWS security controls with NIST CSF audits and enterprise risk reporting. NIST CSF + RMF frameworks bridge technical implementation to board-level governance.</p>
-        </div>
+    <!-- IMPACT & CASE STUDIES -->
+    <section id="impact">
+      <h2>02 / Selected Work</h2>
 
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png" alt="Coursera Logo">
-            <h4>Certified Cloud Security Practitioner (Coursera) | Aug 2025</h4>
-            <a class="cert-link" href="https://coursera.org/verify/specialization/E4LCSA5M6CXR" target="_blank" rel="noopener">Verify</a>
-          </div>
-          <p>Structured coverage of cloud security domains across identity, data protection, and incident response—vendor-neutral foundation for multi-cloud operations.</p>
-        </div>
+      <div class="prose-block">
+        <h3>Production Incident Response</h3>
+        <p>
+          Contained multiple crypto-mining infections across production servers without service interruption. Isolated dormant scripts and the cron jobs reactivating them, built cleanup automation, and restored affected systems under live traffic. Applied OWASP and CIS hardening, added firewall controls, and blocked recurring IP ranges. <strong>Result: approximately ₹50L+ in potential downtime losses avoided</strong>, with post-incident audits confirming continued stability.
+        </p>
+      </div>
 
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png" alt="Coursera Logo">
-            <h4>Data Security & Information Privacy - MacQuarie University (Coursera) | Aug 2025</h4>
-            <a class="cert-link" href="https://coursera.org/verify/0M2OR15F6990" target="_blank" rel="noopener">Verify</a>
-          </div>
-          <p>Baseline for privacy principles, anonymization, and data handling practices that make compliance frameworks technically enforceable.</p>
-        </div>
-        </div>
+      <div class="prose-block">
+        <h3>Infrastructure Modernization</h3>
+        <p>
+          Standardized production, staging, and test environments to eliminate inconsistent deployments. Implemented role-based access control, patch management, and a clear separation of duties. Integrated ELK observability for early defect detection. <strong>Result: regression frequency dropped 40–60% within a quarter</strong>, and the environment passed cyber-insurance compliance review.
+        </p>
+      </div>
+
+      <div class="prose-block">
+        <h3>Security Operations Leadership</h3>
+        <p>
+          Directed AWS infrastructure and security operations through several organizational transitions. Built a Wazuh + TheHive SIEM integrated with QuickSight analytics for incident visibility. Aligned systems with ISO 27001:2022 and CFR Part 11, and coordinated response work under HIPAA and K-12 data governance constraints. <strong>Result: sustained audit readiness, zero critical outages, consistent compliance across ten years.</strong>
+        </p>
+      </div>
+
+      <div class="prose-block">
+        <h3>Platform Engineering</h3>
+        <p>
+          Broad cross-platform infrastructure experience - Linux, Windows, AWS. Designed secure network subnets, CI/CD pipelines, and compliance-ready estates integrating CIS, OWASP, and ISO frameworks. Comfortable in Golang, Python, Bash, and PowerShell for automation and diagnostics. Current focus: combining security, infrastructure, and ML to enable resilient cloud operations.
+        </p>
       </div>
     </section>
 
-    <!-- IN-PROGRESS CERTIFICATIONS -->
-    <!--
-    <section id="certs-progress">
-      <div class="section-title"><span>In Progress (Q1 2026 - Q3 2026)</span><span class="line"></span></div>
-      <p style="color:var(--subtext);font-size:17px;margin-bottom:12px;">
-        Actively pursuing Google Cloud and specialized security certifications to extend AWS expertise into multi-cloud environments.
+    <!-- CURRENT WORK -->
+    <section id="research">
+      <h2>03 / Current Work</h2>
+      <div class="prose-block">
+        <h3>AI-SecOps Lite - vendor-neutral SOC prototype</h3>
+        <p>
+          Building an automated detection -> decision -> adaptation pipeline using Suricata, Wazuh, DuckDB, MLflow, and n8n, with explainable models (IsolationForest, Prophet, SHAP) feeding SOAR feedback loops. Built with model lineage, pseudonymization, and human-in-the-loop controls in mind, aligned with NIS2, GDPR, and the EU AI Act. Designed to extend later to reinforcement-learning playbooks and multi-tenant DuckDB setups.
+        </p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="frameworks">
+      <h2>04 / Professional Development</h2>
+      <p>
+        Blending SecOps with compliance - from AWS hardening to governance frameworks and EU law - into one CloudSec capability for MSSPs and regulated industries.
       </p>
+      <ul class="academic-list">
+        <li><strong>AWS Certified Security - Specialty</strong> - the baseline every secure cloud needs: identity boundaries, encryption, and detection that governance and compliance layers depend on.</li>
+        <li><strong>NIST Cybersecurity & Risk Management (CSF + RMF)</strong> - Coursera/Packt. Turns technical hardening into a governance program, linking incidents and risk treatment directly to cloud controls.</li>
+        <li><strong>GDPR Specialization</strong> - Coursera/Packt. Anchors AWS security in EU law - maps encryption, logging, and retention into GDPR obligations.</li>
+        <li><strong>CCSP Specialization</strong> - Coursera/Pearson. Structured coverage of cloud security domains beyond the AWS ecosystem.</li>
+        <li><strong>Data Security & Information Privacy</strong> - Coursera/Macquarie. Conceptual base for NIST and GDPR work - privacy, anonymization, and data handling.</li>
+        <li><strong>AI for Cybersecurity</strong> - Coursera. Applied AI patterns for threat defense - anomaly detection, adversarial modeling.</li>
+      </ul>
+    </section>
 
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/64px-Amazon_Web_Services_Logo.svg.png?20170912170050" alt="GCP Logo">
-            <h4>Amazon Web Services - Certified Security Specialty | Targeting February 2026</h4>
-            <a class="cert-link" href="https://aws.amazon.com/certification/certified-security-specialty/" target="_blank" rel="noopener">Read</a>
-          </div>
-          <p>Extends AWS security baseline to Google Cloud - access control, encryption, and detection patterns adapted for GCP-native services.</p>
-        </div>
-      </div>
-      
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="GCP Logo">
-            <h4>Google Cloud Platform - Professional Cloud Security Engineer | Targeting May 2026</h4>
-            <a class="cert-link" href="https://cloud.google.com/learn/certification/cloud-security-engineer/" target="_blank" rel="noopener">Read</a>
-          </div>
-          <p>Extends AWS security baseline to Google Cloud - access control, encryption, and detection patterns adapted for GCP-native services.</p>
-        </div>
-      </div>
-
-      <!--<div class="timeline">
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="GCP Logo">
-            <h4>Google Cloud Platform - Professional Machine Learning Engineer | Targeting August 2026</h4>
-            <a class="cert-link" href="https://cloud.google.com/learn/certification/machine-learning-engineer/" target="_blank" rel="noopener">Read</a>
-          </div>
-          <p>ML pipeline development and deployment for security analytics - anomaly detection, threat modeling, and automated response workflows.</p>
-        </div>
-      </div>-->
-
-      <!--<div class="timeline">
-        <div class="tl-item">
-          <div class="tl-header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Coursera-Logo_600x600.svg/64px-Coursera-Logo_600x600.svg.png" alt="Coursera Logo">
-            <h4>Intrusion Detection Specialization - Johns Hopkins University (Coursera) | Targeting December 2026</h4>
-            <a class="cert-link" href="https://www.coursera.org/specializations/intrusion-detection" target="_blank" rel="noopener">Read</a>
-          </div>
-          <p>Advanced detection engineering - network forensics, behavioral analysis, and signature development for SIEM/IDS platforms.</p>
-        </div>
+    <!-- CONTACT -->
+    <section id="contact" class="terminal-cta">
+      <h2>05 / Contact</h2>
+      <p>
+        Currently open to Platform Security Architect, Cloud Security Architecture, and DevSecOps leadership opportunities. Available for remote roles globally and consulting engagements involving cloud security, governance, and platform modernization.
+      </p>
+      <div class="action-row">
+        <a href="https://www.linkedin.com/in/anandbasu1/" target="_blank" rel="noopener" class="primary-btn">Connect on LinkedIn</a>
+        <a href="./resume.html" class="secondary-btn">View Résumé</a>
       </div>
     </section>
-    -->
 
-    <!-- Proof Of Concepts TIMELINE -->
-    <section id="pocs"><section id="certs">
-      <div class="section-title"><span>Currently Building</span><span class="line"></span></div>
-        <div class="tl-content">
-          <p style="color:var(--subtext);font-size:18px;margin-bottom:12px;">
-            <h4>AI-SecOps Lite - Vendor-Neutral, Production-Grade SOC Prototype</h4>
-            <ul>
-              <li>Detection → Decision → Adaptation: Suricata + Wazuh + DuckDB + MLflow + n8n pipeline with explainable ML (IsolationForest, Prophet, SHAP) and automated SOAR feedback loops.</li>
-              <li>Governance & Compliance: Built-in model lineage, pseudonymization, human-in-loop controls aligned with NIS2/GDPR/EU AI Act.</li>
-              <li>Future-Ready: Reinforcement agents for adaptive playbooks, federated DuckDB for MSPs, and sandboxed simulations for risk and policy testing.</li>
-            </ul>
-          </p>
-        </div>
-        
-    </section></section>
-
-    <!-- CONTACT / CONVERSION -->
-    <section id="contact">
-      <div class="section-title"><span>Contact</span><span class="line"></span></div>
-      <div class="cards" style="grid-template-columns: 1.6fr 1.4fr;">
-        <article class="card">
-          <h3>Let's talk</h3>
-          <p class="sub">Available for EU MSSP/MSP CloudSec roles (€50 to €80K). <br />Contact me directly.</p>
-          <div class="meta" style="margin-top:10px">
-            <a class="cta" href="https://www.linkedin.com/in/anand80b/" target="_blank" rel="noopener">LinkedIN</a>
-            <a class="cta" href="./resume.html">Résumé</a>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Signal in one glance</h3>
-          <ul style="margin:0; padding-left:18px; color: var(--subtext); font-size:18px;">
-            <li>Infra turnaround: 40 - 60% regression drop</li>
-            <li>₹50L+ downtime losses prevented</li>
-            <li>SIEM delivery with ML roadmap</li>
-            <li>AWS Security → Multi-Cloud transition</li>
-          </ul>
-        </article>
-      </div>
-    </section>
   </main>
 
   <footer>
-    <div class="container foot">
-      <div>© 2025 Anand Basu • Licensed under 
-        <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
-          CC BY-NC 4.0
-        </a>
-      </div>
-      <div>Built with vanilla HTML/CSS • No trackers • <a class="cta3" href="#home">Back to top</a></div>
+    <div class="footer-container">
+      <div>© 2025 Anand Basu • CC BY-NC 4.0</div>
+      <div>Built with vanilla HTML/CSS</div>
     </div>
   </footer>
-
-<script>
-  document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
-  const toggle = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-
-  if (!localStorage.getItem('theme') &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    root.setAttribute('data-theme', 'dark');
-  } 
-
-  // Load saved preference
-  if (localStorage.getItem('theme') === 'dark') {
-    root.setAttribute('data-theme', 'dark');
-  }
-
-  toggle.addEventListener('click', () => {
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      root.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-</script>
 
 </body>
 </html>
