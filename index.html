@@ -13,9 +13,11 @@
     <div class="nav-container">
       <div class="brand">ANAND BASU</div>
       <nav role="navigation" aria-label="Primary">
+        <a href="about.html">About</a>
         <a href="impact.html">Impact</a>
         <a href="brag.html">Case Studies</a>
         <a href="resume.html">Résumé</a>
+        <a href="builds.html">Builds</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
@@ -23,101 +25,30 @@
 
   <main class="content-container">
 
-    <!-- HERO / IDENTITY -->
     <section id="identity">
-      <div class="meta-header">REMOTE ROLES // CLOUD SECURITY & COMPLIANCE</div>
-      <h1>Platform Security Architect</h1>
-      <div class="subtitle">I design secure AWS platforms that enable organizations to scale with confidence.
+      <div class="hero-split">
+        
+        <div class="hero-text-column">
+          <div class="identity-block">
+            <h1>Platform Security Architect</h1>
+            <div class="subtitle">I design secure AWS platforms that enable organizations to scale with confidence.
 My work combines cloud security, governance, observability, and automation to build resilient infrastructure that satisfies operational, regulatory, and business requirements.</div>
-    </section>
+          </div>
+          
+          <div id="contact" class="terminal-cta inline-cta">
+            <p>Currently open to Platform Security Architect, Cloud Security Architecture, and DevSecOps leadership opportunities. 
+               Available for remote roles globally and consulting engagements involving cloud security, governance, and platform modernization.</p>
+            <div class="action-row">
+              <a href="https://www.linkedin.com/in/anandbasu1/" target="_blank" rel="noopener" class="primary-btn">Connect on LinkedIn</a>
+              <a href="./resume.html" class="secondary-btn">View Résumé</a>
+            </div>
+          </div>
+        </div>
 
-    <!-- ABOUT -->
-    <section id="abstract">
-      <h2>01 / About</h2>
-      <p>
-        Modern cloud security extends beyond firewalls and vulnerability management. I design secure platforms where identity, governance, monitoring, automation, and compliance are integrated into the architecture rather than added afterwards. Over the past two decades I have worked across enterprise infrastructure, DevSecOps, cloud transformation, and incident response, helping organizations improve resilience while reducing operational risk.
-      </p>
-    </section>
+        <div class="hero-profile">
+          <img src="anandbasu_image_web.png" alt="Anand Basu" class="profile-image" />
+        </div>
 
-    <!-- IMPACT & CASE STUDIES -->
-    <section id="impact">
-      <h2>02 / Selected Works</h2>
-
-      <div class="prose-block">
-        <h3>Production Incident Response</h3>
-        <p>
-          Contained multiple crypto-mining infections across production servers on on-premise, and AWS Cloud, without service interruptions. Isolated dormant scripts and the cron jobs reactivating them, built cleanup automation, and restored affected systems under live traffic. Applied OWASP and CIS hardening, added firewall controls, and blocked recurring IP ranges. 
-        </p>
-        <p><strong>Result: Approximately ₹50L+ in potential downtime losses avoided</strong>, with post-incident audits confirming continued stability.</p>
-      </div>
-
-      <div class="prose-block">
-        <h3>Infrastructure Modernization</h3>
-        <p>
-          Standardized production, staging, and test environments to eliminate inconsistent deployments. Implemented role-based access control, patch management, and a clear separation of duties. Integrated ELK observability for early defect detection. 
-        </p>
-        <p><strong>Result: Regression frequency dropped 50 - 70% within a quarter</strong>, and new-feature development velocity increased.</p>
-      </div>
-
-      <div class="prose-block">
-        <h3>Security Operations Leadership</h3>
-        <p>
-          Implemented and Aligned environment with CIS controls through incremental transitions. Tightened controls, enhanced estate visibility with ELK monitoring implementation. Implemented Principle-of-least-privilege methodology across the estate.  
-        </p>
-        <p><strong>Result: Sustained audit readiness, zero critical outages, consistent compliance across last five years.</strong></p>
-      </div>
-
-      <div class="prose-block">
-        <h3>Application Performance and User Behavior Analytics</h3>
-        <p>
-          Implemented custom analytics for tagging in python using scikit-learn and neuralprophet. Implemented statistical models that ranked system instability using a weighted Error Density Index, clustered user behaviour to distinguish normal usage from anomalous activity, and correlated crashes and latency spikes with preceding request patterns.
-        </p>
-        <p><strong>Result: Sustained application performance visiblity. Better clarity on user pain, and malfunctioning endpoints. Zero critical outages. Behaviour analytics with capability to distinguish between user abuse, and system instability.</strong></p>
-      </div>
-
-      <div class="prose-block">
-        <h3>Platform Engineering</h3>
-        <p>
-          Broad cross-platform infrastructure experience - Linux, Windows, AWS. Designed secure network subnets, CI/CD pipelines, and compliance-ready estates integrating CIS, OWASP, and ISO frameworks. Comfortable in Golang, Python, Bash, and PowerShell for automation and diagnostics. Current focus: combining security, infrastructure, and ML to enable resilient cloud operations.
-        </p>
-      </div>
-    </section>
-
-    <!-- CURRENT WORK -->
-    <section id="research">
-      <h2>03 / Current Work</h2>
-      <div class="prose-block">
-        <h3>AI-SecOps Lite - vendor-neutral SOC prototype</h3>
-        <p>
-          Building an automated detection -> decision -> adaptation pipeline using Suricata, Wazuh, DuckDB, MLflow, and n8n, with explainable models (IsolationForest, Prophet, SHAP) feeding SOAR feedback loops. Built with model lineage, pseudonymization, and human-in-the-loop controls in mind. Designed to extend later to reinforcement-learning playbooks and multi-tenant DuckDB setups.
-        </p>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="frameworks">
-      <h2>04 / Professional Development</h2>
-      <p>
-        Blending SecOps with compliance - from AWS hardening to governance frameworks - into one CloudSec capability for MSSPs and regulated industries.
-      </p>
-      <ul class="academic-list">
-        <!--<li><strong>AWS Certified Security - Specialty</strong> - the baseline every secure cloud needs: identity boundaries, encryption, and detection that governance and compliance layers depend on.</li>-->
-        <li><strong>NIST Cybersecurity & Risk Management (CSF + RMF)</strong> - Coursera/Packt. Turns technical hardening into a governance program, linking incidents and risk treatment directly to cloud controls.</li>
-        <li><strong>CCSP Specialization</strong> - Coursera/Pearson. Structured coverage of cloud security domains beyond the AWS ecosystem.</li>
-        <li><strong>Data Security & Information Privacy</strong> - Coursera/Macquarie. Conceptual base for NIST and GDPR work - privacy, anonymization, and data handling.</li>
-        <li><strong>AI for Cybersecurity</strong> - Coursera. Applied AI patterns for threat defense - anomaly detection, adversarial modeling.</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="terminal-cta">
-      <h2>05 / Contact</h2>
-      <p>
-        Currently open to Platform Security Architect, Cloud Security Architecture, and DevSecOps leadership opportunities. Available for remote roles globally and consulting engagements involving cloud security, governance, and platform modernization.
-      </p>
-      <div class="action-row">
-        <a href="https://www.linkedin.com/in/anandbasu1/" target="_blank" rel="noopener" class="primary-btn">Connect on LinkedIn</a>
-        <a href="./resume.html" class="secondary-btn">View Résumé</a>
       </div>
     </section>
 

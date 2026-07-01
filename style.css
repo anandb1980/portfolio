@@ -16,7 +16,7 @@
     --max-width: 760px;        /* Strict reading bounds optimized for prose density */
     --font-header: "JetBrains Mono", "Fira Code", "Courier New", monospace;
     --font-body: "Inter", system-ui, -apple-system, sans-serif;
-    --font-hero: sans-serif,monospace;
+    --font-hero: sans-serif, monospace;
   }
   
   @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
       --bg-color: #111317;     /* Offline system charcoal */
       --text-primary: #f3f4f6; /* High-contrast crisp silver */
       --text-muted: #b3bac7;   /* Muted gray for reading long blocks */
-      --text-light: #626875;
+      --text-light: #4acac4;
       --accent-signal: #00b46e; /* Luminescent active node green (Dark theme execution) */
       --btn-bg: #f3f4f6;
       --btn-text: #111317;
@@ -66,7 +66,7 @@
   header {
     position: fixed;
     top: 0; left: 0; width: 100%;
-    background: #fcfbfa;
+    background: transparent;
     z-index: 1000;
     padding: 40px 0;
   }
@@ -119,13 +119,91 @@
   }
   
   /* ==========================================================================
+     HERO PORTRAIT STRUCTURAL SPLIT
+     ========================================================================== */
+  
+  .hero-split {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  .hero-text-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .identity-block {
+    margin-bottom: 50px; /* Generous vertical whitespace between identity and contact nodes */
+  }
+  
+  .hero-profile {
+    flex-shrink: 0;
+    width: 180px;      /* Precise tracking bounds for the profile photo */
+    position: sticky;  /* Keeps portrait stable relative to expanding text column layers */
+    top: 140px;
+    border-width: 0px;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    filter: grayscale(100%); /* Keeps signature terminal aesthetics clean */
+    transition: filter 0.15s ease;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .profile-image {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0.9; /* Calibrates image backlighting signature under night profiles */
+    }
+  }
+  
+  /* Inline typography tweaks for the split alignment integration */
+  .inline-cta {
+    padding-top: 0;
+  }
+  
+  .inline-cta p {
+    font-size: 15px; /* Harmonizes body scale distribution */
+    line-height: 1.75;
+  }
+  
+  /* ==========================================================================
      PROSE STRUCTURING & WHITESPACE CONTROL
      ========================================================================== */
   
+  /* Inline Technical Case Study Links */
+  .prose-block a {
+    font-family: var(--font-header);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-light);
+    display: inline-block;
+    margin-top: 10px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--accent-signal);
+    letter-spacing: 0.02em;
+    transition: color 0.1s ease, border-color 0.1s ease;
+    margin-bottom: 50px;
+  }
+  
+  .prose-block a:hover {
+    color: var(--accent-signal);
+    border-bottom-color: var(--text-primary);
+  }
+     
   section {
-    padding: 70px 0; /* Expanded empty spaces separating systemic concepts */
+    padding: 70px 0; /* Broad gaps dividing discrete engineering sections */
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
+  
   @media (prefers-color-scheme: dark) {
     section { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
   }
@@ -167,7 +245,7 @@
   }
   
   .prose-block {
-    margin-bottom: 54px; /* Strong vertical spacing between distinct logs */
+    margin-bottom: 54px;
   }
   
   h3 {
@@ -178,14 +256,14 @@
     margin: 0 0 14px 0;
     letter-spacing: -0.01em;
     color: var(--text-primary);
-    border-left: 2px solid var(--accent-signal); /* Discrete technical vertical banner */
+    border-left: 2px solid var(--accent-signal); /* Distinct vertical indicator logic */
     padding-left: 14px;
   }
   
   p {
     color: var(--text-muted);
     margin: 0 0 18px 0;
-    text-align: left; /* Left-aligned configuration to capture systemic shapes over hard justify */
+    text-align: left;
   }
   
   strong {
@@ -213,7 +291,7 @@
   }
   
   /* ==========================================================================
-     STRENGTHENED ACTION BLOCKS
+     ACTION PLATFORM INTERFACES
      ========================================================================== */
   
   .terminal-cta p {
@@ -257,6 +335,7 @@
   .secondary-btn:hover {
     background-color: rgba(0, 0, 0, 0.04);
   }
+  
   @media (prefers-color-scheme: dark) {
     .secondary-btn:hover { background-color: rgba(255, 255, 255, 0.04); }
   }
@@ -280,15 +359,32 @@
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     padding-top: 28px;
   }
+  
   @media (prefers-color-scheme: dark) {
     .footer-container { border-top: 1px solid rgba(255, 255, 255, 0.04); }
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
+  /* ==========================================================================
+     RESPONSIVE LAYOUT OVERRIDES (MOBILE PARAMETERS)
+     ========================================================================== */
+  
+  @media (max-width: 760px) {
     body { padding-top: 100px; }
     .nav-container { flex-direction: column; gap: 16px; align-items: flex-start; }
     nav a { margin-left: 0; margin-right: 20px; }
+    
+    .hero-split {
+      flex-direction: column-reverse; /* Flips order so the image stacks beautifully on narrow viewpoints */
+      gap: 32px;
+    }
+    .hero-profile {
+      width: 140px;
+      position: static;
+    }
+    .identity-block {
+      margin-bottom: 32px;
+    }
+    
     .action-row { flex-direction: column; width: 100%; }
     .primary-btn, .secondary-btn { text-align: center; width: 100%; }
   }
