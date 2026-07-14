@@ -189,7 +189,6 @@
   a {
     color: var(--fg);
     text-decoration: none;
-    font-family: var(--font-link);
     font-weight: 200px;
     border-bottom: 1px solid var(--border);
     transition: border-color 0.15s ease, color 0.15s ease;
@@ -197,7 +196,6 @@
   
   a:hover {
     color: var(--accent);
-    font-family: var(--font-link);
     font-weight: 800px;
     border-bottom-color: var(--fg);
   }
