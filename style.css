@@ -417,3 +417,22 @@
     .action-row { flex-direction: column; width: 100%; }
     .primary-btn, .secondary-btn { text-align: center; width: 100%; }
   }
+
+/* ==========================================================================
+   EXPLICIT GLOBAL OVERRIDE: INLINE SYSTEM NAVIGATION LINKS
+   ========================================================================== */
+.inline-cta p a {
+  font-family: var(--subtitle) !important;
+  color: var(--text-light) !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  display: inline-block !important;
+  transition: color 0.1s ease !important;
+}
+
+.inline-cta p a:hover {
+  color: var(--text-primary) !important;
+}
