@@ -142,7 +142,7 @@
   .hero-split {
     display: flex;
     gap: 40px;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: space-between;
   }
   
@@ -159,17 +159,18 @@
   .hero-profile {
     flex-shrink: 0;
     width: 180px;      /* Precise tracking bounds for the profile photo */
-    position: sticky;  /* Keeps portrait stable relative to expanding text column layers */
-    top: 140px;
-    border-width: 0px;
+    position: relative; /* Modified: Changed from sticky to relative */
+    display: flex;      /* Added: Ensures child image scales correctly */
+    align-items: flex-start;
   }
   
   .profile-image {
     width: 100%;
-    height: auto;
+    height: 100%;       /* Modified: Force it to fill the column height */
+    object-fit: cover;  /* Added: Prevents stretching/distortion */
     display: block;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    filter: grayscale(100%); /* Keeps signature terminal aesthetics clean */
+    filter: grayscale(100%);
     transition: filter 0.15s ease;
   }
   
@@ -183,6 +184,7 @@
   /* Inline typography tweaks for the split alignment integration */
   .inline-cta {
     padding-top: 0;
+    margin-top: auto;
   }
   
   .inline-cta p {
