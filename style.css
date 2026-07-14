@@ -1,90 +1,68 @@
 /* ==========================================================================
-   CYBERNETIC MINIMALISM & OPERATIONAL LOGIC
+   MINIMALIST CONTENT-FIRST ENGINE (Inspired by paco.me & leerob.com)
    ========================================================================== */
 
    :root {
-    /* Stark, print-like layout palette with a low-saturation telemetry signature */
-    --bg-color: #fcfbfa;       /* Off-white parchment */
-    --text-primary: #111111;   /* True dense black */
-    --text-muted: #444444;     /* Deep ash gray for highly legible prose */
-    --text-light: #4acac4;     /* Technical index gray */
-    --accent-signal: #15803d;  /* Control green indicator (Light theme execution) */
-    --btn-bg: #111111;
-    --btn-text: #ffffff;
-    
-    /* Sizing and scaling architectures */
-    --max-width: 760px;        /* Strict reading bounds optimized for prose density */
-    --font-header: "JetBrains Mono", "Fira Code", "Courier New", monospace;
-    --font-body: "Inter", system-ui, -apple-system, sans-serif;
-    --font-hero: "JetBrains Mono",sans-serif, monospace;
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #666666;
+    --accent: #2563eb; /* Clean blue, or use #0070f3 */
+    --border: #eaeaea;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
   
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg-color: #111317;     /* Offline system charcoal */
-      --text-primary: #f3f4f6; /* High-contrast crisp silver */
-      --text-muted: #b3bac7;   /* Muted gray for reading long blocks */
-      --text-light: #4acac4;
-      --accent-signal: #00b46e; /* Luminescent active node green (Dark theme execution) */
-      --btn-bg: #f3f4f6;
-      --btn-text: #111317;
+      --bg: #0b0b0b;
+      --fg: #f3f4f6;
+      --muted: #888888;
+      --accent: #3b82f6;
+      --border: #222222;
     }
   }
-
-  @font-face {
-    font-family: "Inter";
-    src: url("Inter.woff2") format("woff2-variations");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
   
-  @font-face {
-    font-family: "JetBrains Mono";
-    src: url("JetBrainsMono.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  /* ==========================================================================
-     BASE LAYOUT ENGINE
-     ========================================================================== */
-  
-  * { box-sizing: border-box; }
-  
-  html {
-    scroll-behavior: auto; /* Disabled smooth scrolling per minimalist specification */
-    background-color: var(--bg-color);
+  * {
+    box-sizing: border-box;
   }
   
   body {
     margin: 0;
-    padding: 140px 0 80px 0; /* Massive upper whitespace distribution */
-    color: var(--text-primary);
-    font-family: var(--font-body);
+    padding: 80px 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
     font-size: 15px;
-    line-height: 1.75;       /* Expanded tracking lines for dense paragraphs */
+    line-height: 1.6;
     letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
   }
   
-  .nav-container, .content-container, .footer-container {
-    max-width: var(--max-width);
+  /* ==========================================================================
+     LAYOUT CONTAINERS
+     ========================================================================== */
+  
+  .nav-container, 
+  .content-container, 
+  .footer-container {
+    max-width: 680px; /* Paco/Lee Rob style tight width for optimum readability */
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 24px;
   }
   
   /* ==========================================================================
-     TELEMETRY HEADER & NAVIGATION
+     NAVIGATION (Border-free, clean spacing)
      ========================================================================== */
   
   header {
     position: fixed;
-    top: 0; left: 0; width: 100%;
-    background: transparent;
-    z-index: 1000;
-    padding: 40px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(var(--bg), 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    padding: 24px 0;
   }
   
   .nav-container {
@@ -94,345 +72,215 @@
   }
   
   .brand {
-    font-family: var(--font-header);
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.02em;
   }
   
-  /* Active system state pulse marker */
-  .brand::before {
-    content: "";
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background-color: var(--accent-signal);
-    border-radius: 50%;
-    margin-right: 10px;
+  nav {
+    display: flex;
+    gap: 16px;
   }
   
   nav a {
-    font-family: var(--font-header);
-    color: var(--text-light);
+    color: var(--muted);
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    margin-left: 24px;
-    transition: color 0.1s ease;
+    font-size: 14px;
+    transition: color 0.15s ease;
   }
   
-  nav a:hover {
-    color: var(--text-primary);
+  nav a:hover,
+  nav a.active {
+    color: var(--fg);
   }
   
   nav a.nav-cta {
-    color: var(--text-primary);
-    font-weight: 700;
-    border-bottom: 1px solid var(--text-primary);
+    color: var(--fg);
+    font-weight: 500;
   }
   
   /* ==========================================================================
-     HERO PORTRAIT STRUCTURAL SPLIT
+     TYPOGRAPHY & CONTENT
+     ========================================================================== */
+  
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin: 0 0 16px 0;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fg);
+    margin: 48px 0 24px 0;
+  }
+  
+  p {
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  
+  p strong {
+    color: var(--fg);
+  }
+  
+  a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--border);
+    transition: text-decoration-color 0.15s ease;
+  }
+  
+  a:hover {
+    text-decoration-color: var(--fg);
+  }
+  
+  /* ==========================================================================
+     MINIMALIST LISTS & HOVER WRAPPERS (Lee Rob/Paco Style)
+     ========================================================================== */
+  
+  /* Clean block item with subtle hover shift */
+  .item-row {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.15s ease;
+  }
+  
+  .item-row:hover {
+    transform: translateX(4px);
+  }
+  
+  .item-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  
+  .item-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--fg);
+    text-decoration: none;
+    margin-bottom: 6px;
+  }
+  
+  .item-description {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+  
+  /* ==========================================================================
+     HERO PORTRAIT STYLE
      ========================================================================== */
   
   .hero-split {
     display: flex;
-    gap: 40px;
-    align-items: stretch;
     justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-top: 40px;
   }
   
   .hero-text-column {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .identity-block {
-    margin-bottom: 50px; /* Generous vertical whitespace between identity and contact nodes */
   }
   
   .hero-profile {
+    width: 100px;
+    height: 100px;
     flex-shrink: 0;
-    width: 180px;      /* Precise tracking bounds for the profile photo */
-    position: relative; /* Modified: Changed from sticky to relative */
-    display: flex;      /* Added: Ensures child image scales correctly */
-    align-items: flex-start;
   }
   
   .profile-image {
     width: 100%;
-    height: 100%;       /* Modified: Force it to fill the column height */
-    object-fit: cover;  /* Added: Prevents stretching/distortion */
-    display: block;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    height: 100%;
+    border-radius: 50%; /* Modern circular crop similar to modern avatars */
+    object-fit: cover;
     filter: grayscale(100%);
-    transition: filter 0.15s ease;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .profile-image {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      opacity: 0.9; /* Calibrates image backlighting signature under night profiles */
-    }
-  }
-  
-  /* Inline typography tweaks for the split alignment integration */
-  .inline-cta {
-    padding-top: 0;
-    margin-top: auto;
-  }
-  
-  .inline-cta p {
-    font-size: 15px; /* Harmonizes body scale distribution */
-    line-height: 1.75;
+    border: 1px solid var(--border);
   }
   
   /* ==========================================================================
-     PROSE STRUCTURING & WHITESPACE CONTROL
+     CTA BUTTONS (Sleek, Borderless / High-Contrast)
      ========================================================================== */
-  
-  /* Inline Technical Case Study Links */
-  .prose-block a {
-    font-family: var(--font-header);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text-light);
-    display: inline-block;
-    margin-top: 10px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid var(--accent-signal);
-    letter-spacing: 0.02em;
-    transition: color 0.1s ease, border-color 0.1s ease;
-    margin-bottom: 50px;
-  }
-  
-  .prose-block a:hover {
-    color: var(--accent-signal);
-    border-bottom-color: var(--text-primary);
-  }
-     
-  section {
-    padding: 70px 0; /* Broad gaps dividing discrete engineering sections */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    section { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
-  }
-  
-  .meta-header {
-    font-family: var(--font-header);
-    font-size: 15px;
-    letter-spacing: 0.05em;
-    color: var(--text-light);
-    margin-bottom: 20px;
-  }
-
-  .meta-location {
-    font-family: var(--font-header);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    color: var(--text-light);
-    margin-bottom: 20px;
-  }
-
-
-  h1 {
-    font-family: var(--font-hero);
-    font-size: clamp(16px, 4.5vw, 22px);
-    font-weight: 800;
-    line-height: 1.25;
-    margin: 0 0 24px 0;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-  }
-  
-  .subtitle {
-    font-size: 17px;
-    line-height: 1.6;
-    color: var(--text-muted);
-    font-weight: 400;
-    max-width: 100%;
-  }
-  
-  h2 {
-    font-family: var(--font-header);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.10em;
-    font-weight: 800;
-    color: var(--text-light);
-    margin: 0 0 44px 0;
-  }
-  
-  .prose-block {
-    margin-bottom: 54px;
-  }
-  
-  h3 {
-    font-family: var(--font-header);
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0 0 14px 0;
-    letter-spacing: -0.01em;
-    color: var(--text-primary);
-    border-left: 2px solid var(--accent-signal); /* Distinct vertical indicator logic */
-    padding-left: 14px;
-  }
-  
-  p {
-    color: var(--text-muted);
-    margin: 0 0 18px 0;
-    text-align: left;
-  }
-  
-  strong {
-    color: var(--text-primary);
-    font-weight: 600;
-  }
-  
-  /* ==========================================================================
-     ACADEMIC-STYLE COMPLIANCE LISTS
-     ========================================================================== */
-  
-  .academic-list {
-    padding-left: 16px;
-    margin: 0;
-  }
-  
-  .academic-list li {
-    color: var(--text-muted);
-    margin-bottom: 18px;
-    list-style-type: square;
-  }
-  
-  .academic-list li::marker {
-    color: var(--accent-signal);
-  }
-  
-  /* ==========================================================================
-     ACTION PLATFORM INTERFACES
-     ========================================================================== */
-  
-  .terminal-cta p {
-    font-size: 16px;
-    color: var(--text-muted);
-    margin-bottom: 36px;
-  }
   
   .action-row {
     display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  
-  .primary-btn, .secondary-btn {
-    font-family: var(--font-header);
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 14px 32px;
-    transition: opacity 0.1s ease, background-color 0.1s ease;
+    gap: 12px;
+    margin-top: 24px;
   }
   
   .primary-btn {
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
+    background-color: var(--fg);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: opacity 0.15s ease;
   }
   
   .primary-btn:hover {
-    opacity: 0.85;
+    opacity: 0.9;
   }
   
   .secondary-btn {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--text-primary);
+    border: 1px solid var(--border);
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
   }
   
   .secondary-btn:hover {
-    background-color: rgba(0, 0, 0, 0.04);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    .secondary-btn:hover { background-color: rgba(255, 255, 255, 0.04); }
+    background-color: var(--border);
   }
   
   /* ==========================================================================
-     SYSTEM TERMINAL FOOTER DATA
+     FOOTER
      ========================================================================== */
   
   footer {
-    padding: 40px 0 60px 0;
-    font-family: var(--font-header);
-    font-size: 11px;
-    color: var(--text-light);
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
   }
   
   .footer-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    padding-top: 28px;
   }
   
-  @media (prefers-color-scheme: dark) {
-    .footer-container { border-top: 1px solid rgba(255, 255, 255, 0.04); }
-  }
-  
-  /* ==========================================================================
-     RESPONSIVE LAYOUT OVERRIDES (MOBILE PARAMETERS)
-     ========================================================================== */
-  
-  @media (max-width: 760px) {
-    body { padding-top: 100px; }
-    .nav-container { flex-direction: column; gap: 16px; align-items: flex-start; }
-    nav a { margin-left: 0; margin-right: 20px; }
-    
+  /* Responsive design */
+  @media (max-width: 600px) {
+    body {
+      padding: 60px 0;
+    }
     .hero-split {
-      flex-direction: column-reverse; /* Flips order so the image stacks beautifully on narrow viewpoints */
-      gap: 32px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 20px;
     }
-    .hero-profile {
-      width: 140px;
-      position: static;
-    }
-    .identity-block {
-      margin-bottom: 32px;
-    }
-    
-    .action-row { flex-direction: column; width: 100%; }
-    .primary-btn, .secondary-btn { text-align: center; width: 100%; }
   }
-
-/* ==========================================================================
-   EXPLICIT GLOBAL OVERRIDE: INLINE SYSTEM NAVIGATION LINKS
-   ========================================================================== */
-.inline-cta p a {
-  font-family: var(--subtitle) !important;
-  color: var(--text-light) !important;
-  text-decoration: none !important;
-  text-transform: uppercase !important;
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.02em !important;
-  display: inline-block !important;
-  transition: color 0.1s ease !important;
-}
-
-.inline-cta p a:hover {
-  color: var(--text-primary) !important;
-}
